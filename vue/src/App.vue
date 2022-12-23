@@ -1,8 +1,19 @@
-<script setup>
+<script>
 import HelloWorld from './components/HelloWorld.vue'
+import { mapState } from 'vuex';
+
+export default {
+    components: {
+        HelloWorld,
+    },
+    computed: {
+        ...mapState(['user'])
+    }
+}
 </script>
 
 <template>
+    <pre>{{ user }}</pre>
   <div>
     <a href="https://vitejs.dev" target="_blank">
       <img src="/vite.svg" class="logo" alt="Vite logo" />
