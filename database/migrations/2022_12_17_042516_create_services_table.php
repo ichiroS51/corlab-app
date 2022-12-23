@@ -27,7 +27,7 @@ return new class extends Migration
             $table->unsignedBigInteger('invoice_id')->unique();
             $table->foreign('invoice_id')
                 ->references('id')
-                ->on('invoice')
+                ->on('invoices')
                 ->onDelete('cascade')
                 ->onUpdate('cascade');
             $table->timestamps();
