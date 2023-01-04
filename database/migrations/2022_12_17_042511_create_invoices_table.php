@@ -15,8 +15,6 @@ return new class extends Migration
     {
         Schema::create('invoices', function (Blueprint $table) {
             $table->id();
-            $table->string('firstname');
-            $table->string('lastname');
             $table->string('result_path');
             $table->string('pay_number')->nullable();
             # relationships one to many with clients table
