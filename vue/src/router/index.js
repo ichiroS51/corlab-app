@@ -5,18 +5,19 @@ import Logged from '../components/Logged.vue';
 import NotLogged from '../components/NotLogged.vue';
 import NotLog from '../views/NotLog.vue';
 import store from '../store/';
+import TestRequest from '../views/TestRequest.vue';
 
 const router = createRouter({
     history: createWebHistory(),
     routes: [
         {
-            path: '/landing',
+            path: '/app',
             name: 'Logged',
             component: Logged,
             meta: { requiresAuth: true },
             children: [
                 {
-                    path: '/landing',
+                    path: '/app/landing',
                     name: 'Landing',
                     component: Landing,
                 },
@@ -26,7 +27,7 @@ const router = createRouter({
             path: '/',
             name: 'NotLogged',
             component: NotLogged,
-            meta: { isGuest: true },
+            // meta: { isGuest: true },
             children: [
                 {
                     path: '/',
@@ -38,6 +39,11 @@ const router = createRouter({
                     name: 'Login',
                     component: Login,
                 },
+                {
+                    path: '/test-request',
+                    name: 'TestRequest',
+                    component: TestRequest,
+                },
             ]
         },
     ]
@@ -46,7 +52,7 @@ const router = createRouter({
 router.beforeEach((to, from, next) => {
     if (to.meta.requiresAuth && !store.state.user.token) {
         next({ name: "Login" });
-    } else if (store.state.user.token && to.isGuest === 'Login') {
+    } else if (store.state.user.token && (to.name === 'Login' || to.name === 'Notlog' || to.name === 'Logged')) {
         next({ name: 'Landing' });
     } else {
         next()
