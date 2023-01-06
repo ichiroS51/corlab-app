@@ -17,7 +17,10 @@ const store = createStore({
 
     },
     modules: {
-
+        logout: (state) => {
+            state.user.token = null;
+            state.user.data = {};
+        }
     },
 })
 
