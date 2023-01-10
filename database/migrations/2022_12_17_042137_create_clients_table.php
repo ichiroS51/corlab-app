@@ -19,12 +19,14 @@ return new class extends Migration
             $table->string('firstname');
             $table->string('lastname');
             $table->string('email');
-            # relationships one to many with admin table
-            $table->unsignedBigInteger('admin_id')->nullable();
-            $table->foreign('admin_id')
+            $table->string('phone_number');
+            # Relationships one to one with users table
+            $table->unsignedBigInteger('user_id')->unique()->nullable();
+            $table->foreign('user_id')
                 ->references('id')
-                ->on('administrators')
-                ->onDelete('set null');
+                ->on('users')
+                ->onDelete('cascade')
+                ->onUpdate('cascade');
             $table->timestamps();
         });
     }

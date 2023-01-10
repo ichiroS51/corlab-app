@@ -17,11 +17,12 @@ return new class extends Migration
             $table->id();
             $table->string('result_path');
             $table->string('pay_number')->nullable();
+            $table->integer('total_pay')->nullable();
             # relationships one to many with clients table
-            $table->unsignedBigInteger('test_id')->nullable();
-            $table->foreign('test_id')
+            $table->unsignedBigInteger('user_ci')->nullable();
+            $table->foreign('user_ci')
                 ->references('id')
-                ->on('tests')
+                ->on('clients')
                 ->onDelete('set null');
             $table->timestamps();
         });

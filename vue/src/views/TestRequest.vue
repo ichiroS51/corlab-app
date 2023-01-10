@@ -134,9 +134,9 @@
                                     </div>
 
                                     <div class="col-span-2 sm:col-span-4">
-                                        <label for="email-address"
+                                        <label for="user-ci"
                                             class="block text-sm font-medium text-gray-700">Cèdula de Identidad</label>
-                                        <input type="text" name="email-address" id="email-address" autocomplete="email"
+                                        <input type="text" name="user-ci" id="user-ci" autocomplete="email"
                                             class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm" />
                                     </div>
 
@@ -151,33 +151,33 @@
                                         </select>
                                     </div> -->
 
-                                    <div class="col-span-6">
+<!--                                    <div class="col-span-6">
                                         <label for="street-address" class="block text-sm font-medium text-gray-700">
                                             Direcciòn
                                         </label>
                                         <input type="text" name="street-address" id="street-address"
                                             autocomplete="street-address"
                                             class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm" />
-                                    </div>
+                                    </div>-->
 
-                                    <div class="col-span-6 sm:col-span-6 lg:col-span-2">
+<!--                                    <div class="col-span-6 sm:col-span-6 lg:col-span-2">
                                         <label for="city" class="block text-sm font-medium text-gray-700">Ciudad</label>
                                         <input type="text" name="city" id="city" autocomplete="address-level2"
                                             class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm" />
-                                    </div>
+                                    </div>-->
 
-                                    <div class="col-span-6 sm:col-span-3 lg:col-span-2">
+<!--                                    <div class="col-span-6 sm:col-span-3 lg:col-span-2">
                                         <label for="region"
                                             class="block text-sm font-medium text-gray-700">Estado</label>
                                         <input type="text" name="region" id="region" autocomplete="address-level1"
                                             class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm" />
-                                    </div>
+                                    </div>-->
 
                                     <div class="col-span-6 sm:col-span-3 lg:col-span-2">
-                                        <label for="postal-code" class="block text-sm font-medium text-gray-700">Nùmero
+                                        <label for="cellphone" class="block text-sm font-medium text-gray-700">Nùmero
                                             de Telèfono</label>
-                                        <input type="text" name="postal-code" id="postal-code"
-                                            autocomplete="postal-code"
+                                        <input type="text" name="cellphone" id="cellphone"
+                                            autocomplete="cellphone"
                                             class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm" />
                                     </div>
                                 </div>
@@ -415,6 +415,11 @@
 </template>
 
 <script setup>
+import store from '../store';
+import useRouter from 'vue-router';
+
+const router = useRouter();
+
 const testsList = [
     { testName: 'Orina', price: 20 },
     { testName: 'Heces', price: 10 },
@@ -426,4 +431,21 @@ const payMethods = [
     { method: 'Pago Mòvil', bank: 'Banco de Venezuela', ci: 12345678, cellPhone: 4141234567 },
     { method: 'Transferencia', bank: 'Banco de Venezuela', numCta: '01020618910100006366', ci: 12345678, name: 'Zulay Ramos' },
 ]
+
+const userData = {
+    firstname: '',
+    lastname: '',
+    email: '',
+    userci: 0,
+    cellphone: '',
+}
+
+function request(ev) {
+    ev.preventDefault(),
+    store
+        .dispatch('request', userData)
+        .then(() => {
+            router
+        })
+}
 </script>
