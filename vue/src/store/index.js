@@ -12,6 +12,7 @@ const store = createStore({
             token: null,
             method: {},
             total_pay: 0,
+            pay_number: 0,
         }
     },
     getters: {
@@ -63,11 +64,11 @@ const store = createStore({
                 .catch((err) => console.log(err));
         },
         // Actions for pay invoice of this user
-        pay({ commit }, pays) {
+        pay({ commit }, number) {
+            commit('setPayNumber', number)
             // fetching to backend route api with axios
-            return axiosClient.post('/test-pay', pays)
+            return axiosClient.post('/test-pay', this.state.user)
                 .then(({ data }) => {
-                    commit('setMethod', data.method);
                     return data;
                 })
                 .catch((err) => console.log(err));
@@ -100,6 +101,9 @@ const store = createStore({
             for (let prop of prices) {
                 state.user.total_pay += prop;
             }
+        },
+        setPayNumber(state, number) {
+            state.user.pay_number = parseInt(number);
         },
     },
     modules: {},

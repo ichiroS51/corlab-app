@@ -29,10 +29,11 @@ class InvoiceController extends Controller
 
     public function pay(Request $request) {
         $pays = $request->validate([
-            'pay_number' => 'required|unique:invoices'
+            'ci' => 'required|integer',
+            'pay_number' => 'required|integer'
         ]);
 
-        $saved = Invoice::where('user_ci', $this->user_ci)->update([
+        $saved = Invoice::where('user_ci', $pays['ci'])->update([
             'pay_number' => $pays['pay_number'],
         ]);
 

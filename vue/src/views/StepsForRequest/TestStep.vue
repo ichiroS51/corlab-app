@@ -177,7 +177,7 @@ export default {
 
         pushTests(e) {
             this.clientTests.tests.push(parseInt(e.target.value));
-        }
+        },
     }
 }
 </script>

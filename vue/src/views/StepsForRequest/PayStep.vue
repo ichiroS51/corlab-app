@@ -61,7 +61,7 @@
                     </div>
 
                     <div class="rounded-lg bg-white p-8 shadow-lg lg:col-span-3 lg:p-12">
-                        <form action="" class="space-y-4">
+                        <form @submit="payRequest">
                             <div>
                                 <label class="sr-only" for="name">Nombre</label>
                                 <input class="w-full rounded-lg border-gray-200 p-3 text-sm" placeholder="Nombre"
@@ -128,8 +128,28 @@ export default {
             user_name: store.getters.getName,
             user_email: store.getters.getEmail,
             user_phone: store.getters.getPhone,
-            pay_number: '',
+            pay_number: 0,
         }
     },
+
+    methods: {
+        payRequest(ev) {
+            ev.preventDefault();
+            this.$store
+                .dispatch('pay', this.pay_number)
+                .then((res) => {
+                    // this.$router.push({
+                    //     name: 'Pay'
+                    // });
+                    console.log('Request Test Successfully')
+                })
+                .catch((error) => {
+                    this.$loading.value = false;
+                    if (error.response.status === 422) {
+                        errors.value = error.response.data.errors;
+                    }
+                });
+        },
+    }
 }
 </script>
