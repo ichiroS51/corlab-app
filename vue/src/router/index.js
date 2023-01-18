@@ -3,9 +3,13 @@ import Landing from '../views/Landing.vue';
 import Login from '../views/Login.vue';
 import Logged from '../components/Logged.vue';
 import NotLogged from '../components/NotLogged.vue';
+import StepForTest from '../components/StepForTest.vue';
 import NotLog from '../views/NotLog.vue';
 import store from '../store/';
-import TestRequest from '../views/TestRequest.vue';
+// import TestRequest from '../views/TestRequest.vue';
+import InformationStep from '../views/StepsForRequest/InformationStep.vue';
+import TestStep from '../views/StepsForRequest/TestStep.vue';
+import PayStep from '../views/StepsForRequest/PayStep.vue';
 
 const router = createRouter({
     history: createWebHistory(),
@@ -40,9 +44,19 @@ const router = createRouter({
                     component: Login,
                 },
                 {
-                    path: '/test-request',
-                    name: 'TestRequest',
-                    component: TestRequest,
+                    path: '/info',
+                    name: 'Info',
+                    component: InformationStep,
+                },
+                {
+                    path: '/test',
+                    name: 'Test',
+                    component: TestStep,
+                },
+                {
+                    path: '/pay',
+                    name: 'Pay',
+                    component: PayStep,
                 },
             ]
         },

@@ -1,5 +1,5 @@
 <template>
-    <div class="container flex flex-col justify-center p-6 mx-auto ">
+    <div class="container flex flex-col justify-center p-6 mx-auto">
         <!-- <div>
             <div class="md:grid md:grid-cols-3 md:gap-6">
                 <div class="md:col-span-1">
@@ -107,7 +107,7 @@
                     </div>
                 </div>
                 <div class="mt-5 md:col-span-2 md:mt-0">
-                    <form action="#" method="POST">
+                    <form @submit="request">
                         <div class="overflow-hidden shadow sm:rounded-md">
                             <div class="bg-white px-4 py-5 sm:p-6">
                                 <div class="grid grid-cols-6 gap-6">
@@ -116,28 +116,32 @@
                                             Nombres
                                         </label>
                                         <input type="text" name="first-name" id="first-name" autocomplete="given-name"
-                                            class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm" />
+                                            class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm"
+                                            v-model="clientData.firstname" required />
                                     </div>
 
                                     <div class="col-span-6 sm:col-span-3">
                                         <label for="last-name"
                                             class="block text-sm font-medium text-gray-700">Apellidos</label>
                                         <input type="text" name="last-name" id="last-name" autocomplete="family-name"
-                                            class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm" />
+                                            class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm"
+                                            v-model="clientData.lastname" required />
                                     </div>
 
                                     <div class="col-span-6 sm:col-span-4">
                                         <label for="email-address"
                                             class="block text-sm font-medium text-gray-700">Correo Electrònico</label>
                                         <input type="text" name="email-address" id="email-address" autocomplete="email"
-                                            class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm" />
+                                            class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm"
+                                            v-model="clientData.email" required />
                                     </div>
 
                                     <div class="col-span-2 sm:col-span-4">
-                                        <label for="user-ci"
-                                            class="block text-sm font-medium text-gray-700">Cèdula de Identidad</label>
-                                        <input type="text" name="user-ci" id="user-ci" autocomplete="email"
-                                            class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm" />
+                                        <label for="user_ci" class="block text-sm font-medium text-gray-700">Cèdula de
+                                            Identidad</label>
+                                        <input type="text" name="user_ci" id="user_ci" autocomplete="email"
+                                            class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm"
+                                            v-model="clientData.user_ci" required />
                                     </div>
 
                                     <!-- <div class="col-span-6 sm:col-span-3">
@@ -151,7 +155,7 @@
                                         </select>
                                     </div> -->
 
-<!--                                    <div class="col-span-6">
+                                    <!--                                    <div class="col-span-6">
                                         <label for="street-address" class="block text-sm font-medium text-gray-700">
                                             Direcciòn
                                         </label>
@@ -160,13 +164,13 @@
                                             class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm" />
                                     </div>-->
 
-<!--                                    <div class="col-span-6 sm:col-span-6 lg:col-span-2">
+                                    <!--                                    <div class="col-span-6 sm:col-span-6 lg:col-span-2">
                                         <label for="city" class="block text-sm font-medium text-gray-700">Ciudad</label>
                                         <input type="text" name="city" id="city" autocomplete="address-level2"
                                             class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm" />
                                     </div>-->
 
-<!--                                    <div class="col-span-6 sm:col-span-3 lg:col-span-2">
+                                    <!--                                    <div class="col-span-6 sm:col-span-3 lg:col-span-2">
                                         <label for="region"
                                             class="block text-sm font-medium text-gray-700">Estado</label>
                                         <input type="text" name="region" id="region" autocomplete="address-level1"
@@ -174,17 +178,19 @@
                                     </div>-->
 
                                     <div class="col-span-6 sm:col-span-3 lg:col-span-2">
-                                        <label for="cellphone" class="block text-sm font-medium text-gray-700">Nùmero
+                                        <label for="phone_number" class="block text-sm font-medium text-gray-700">Nùmero
                                             de Telèfono</label>
-                                        <input type="text" name="cellphone" id="cellphone"
-                                            autocomplete="cellphone"
-                                            class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm" />
+                                        <input type="text" name="phone_number" id="phone_number"
+                                            autocomplete="phone_number"
+                                            class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm"
+                                            v-model="clientData.phone_number" required />
                                     </div>
                                 </div>
                             </div>
                             <div class="bg-gray-50 px-4 py-3 text-right sm:px-6">
-                                <button type="submit"
-                                    class="inline-flex justify-center rounded-md border border-transparent bg-indigo-600 py-2 px-4 text-sm font-medium text-white shadow-sm hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2">Save</button>
+                                <button type="submit" v-if="hidden"
+                                    class="inline-flex justify-center rounded-md border border-transparent bg-indigo-600 py-2 px-4 text-sm font-medium text-white shadow-sm hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2">Save {{ hidden }}</button>
+
                             </div>
                         </div>
                     </form>
@@ -416,9 +422,8 @@
 
 <script setup>
 import store from '../store';
-import useRouter from 'vue-router';
 
-const router = useRouter();
+let hidden = true;
 
 const testsList = [
     { testName: 'Orina', price: 20 },
@@ -430,22 +435,24 @@ const testsList = [
 const payMethods = [
     { method: 'Pago Mòvil', bank: 'Banco de Venezuela', ci: 12345678, cellPhone: 4141234567 },
     { method: 'Transferencia', bank: 'Banco de Venezuela', numCta: '01020618910100006366', ci: 12345678, name: 'Zulay Ramos' },
-]
+];
 
-const userData = {
+const clientData = {
     firstname: '',
     lastname: '',
     email: '',
-    userci: 0,
-    cellphone: '',
-}
+    user_ci: '',
+    phone_number: '',
+};
 
 function request(ev) {
-    ev.preventDefault(),
+    ev.preventDefault();
     store
-        .dispatch('request', userData)
-        .then(() => {
-            router
+        .dispatch('requestTest', clientData)
+        .then((res) => {
+            hidden = false;
+            console.log(hidden)
         })
 }
+
 </script>

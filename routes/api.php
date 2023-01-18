@@ -3,6 +3,7 @@
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ClientController;
+use App\Http\Controllers\InvoiceController;
 
 /*
 |--------------------------------------------------------------------------
@@ -19,4 +20,6 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
 });
 
-Route::post('/test-request', [ClientController::class, 'request-test']);
+Route::post('/test-info', [ClientController::class, 'storeClient']);
+Route::post('/test-method', [InvoiceController::class, 'geInvoice']);
+Route::post('/test-pay', [InvoiceController::class, 'pay']);
