@@ -68,6 +68,11 @@
                                     type="text" id="name" readonly :value="user_name" />
                             </div>
                             <div>
+                                <label class="sr-only" for="name">Apellido</label>
+                                <input class="w-full rounded-lg border-gray-200 p-3 text-sm" placeholder="Nombre"
+                                    type="text" id="name" readonly :value="user_ape" />
+                            </div>
+                            <div>
                                 <label class="sr-only" for="name">CI</label>
                                 <input class="w-full rounded-lg border-gray-200 p-3 text-sm" placeholder="CI"
                                     type="text" id="name" readonly :value="user_ci" />
@@ -126,9 +131,10 @@ export default {
             method: store.getters.getMethod,
             user_ci: store.getters.getCi,
             user_name: store.getters.getName,
+            user_ape: store.getters.getLast,
             user_email: store.getters.getEmail,
             user_phone: store.getters.getPhone,
-            pay_number: 0,
+            pay_number: '',
         }
     },
 

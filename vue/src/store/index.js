@@ -6,6 +6,7 @@ const store = createStore({
         user: {
             data: {},
             firstname: '',
+            lastname: '',
             ci: 0,
             email: '',
             phone: '',
@@ -25,6 +26,9 @@ const store = createStore({
         getName(state) {
             return state.user.name;
         },
+        getLast(state) {
+            return state.user.lastname;
+        },
         getEmail(state) {
             return state.user.email;
         },
@@ -35,8 +39,9 @@ const store = createStore({
     actions: {
         // Actions for save client information
         requestTest({ commit }, client) {
-            commit('setEmail', client.email)
+            commit('setEmail', client.email);
             commit('setName', client.firstname);
+            commit('setLast', client.lastname);
             commit('setPhone', client.phone_number);
             console.log(this.state.user.email);
             // fetching to backend route api with axios
@@ -93,6 +98,9 @@ const store = createStore({
         },
         setName: (state, name) => {
             state.user.name = name;
+        },
+        setLast: (state, last) => {
+            state.user.lastname = last;
         },
         setPhone: (state, phone) => {
             state.user.phone = phone;
