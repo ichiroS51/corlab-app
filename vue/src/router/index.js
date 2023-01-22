@@ -15,17 +15,22 @@ import EditInvoices from '../views/AdminViews/EditInvoices.vue';
 import EditTests from '../views/AdminViews/EditTests.vue';
 import Invoices from '../views/AdminViews/Invoices.vue';
 import PerfilHematologico from '../views/TestsForms/PerfilHematologico.vue';
+import PerfilBioquimico from '../views/TestsForms/PerfilBioquimico.vue';
+import PerfilCoagulación from '../views/TestsForms/PerfilCoagulación.vue';
+import PerfilSerologico from '../views/TestsForms/PerfilSerologico.vue';
+import PerfilEnzimatico from '../views/TestsForms/PerfilEnzimatico.vue';
+import CoproAnalisis from '../views/TestsForms/CoproAnalisis.vue';
+import UroAnalisis from '../views/TestsForms/UroAnalisis.vue';
+import PruebaDeEmbarazo from '../views/TestsForms/PruebaEmbarazo.vue';
 
 const router = createRouter({
     history: createWebHistory(),
-    routes: [
-        {
+    routes: [{
             path: '/app',
             name: 'Logged',
             component: Logged,
             meta: { requiresAuth: true },
-            children: [
-                {
+            children: [{
                     path: '/app/landing',
                     name: 'Landing',
                     component: Landing,
@@ -52,8 +57,7 @@ const router = createRouter({
             name: 'Dashboard',
             component: DashBoard,
             meta: { requiresAuth: true },
-            children: [
-                {
+            children: [{
                     path: '/dashboard/new-user',
                     name: 'NewUser',
                     component: CreateNewUser,
@@ -83,6 +87,41 @@ const router = createRouter({
                     name: 'PerfilHema',
                     component: PerfilHematologico,
                 },
+                {
+                    path: '/dashboard/profile-bioquimic',
+                    name: 'PerfilBioqui',
+                    component: PerfilBioquimico,
+                },
+                {
+                    path: '/dashboard/profile-coagulation',
+                    name: 'PerfilCoagula',
+                    component: PerfilCoagulación,
+                },
+                {
+                    path: '/dashboard/profile-serologic',
+                    name: 'PerfilSerologi',
+                    component: PerfilSerologico,
+                },
+                {
+                    path: '/dashboard/profile-enzimatic',
+                    name: 'PerfilEnzimati',
+                    component: PerfilEnzimatico,
+                },
+                {
+                    path: '/dashboard/profile-coproanalisis',
+                    name: 'CoproAnalisis',
+                    component: CoproAnalisis,
+                },
+                {
+                    path: '/dashboard/profile-uroanalisis',
+                    name: 'UroAnalisis',
+                    component: UroAnalisis,
+                },
+                {
+                    path: '/dashboard/profile-pruebaembarazo',
+                    name: 'PruebaDeEmbarazo',
+                    component: PruebaDeEmbarazo,
+                },
             ],
 
         },
@@ -90,8 +129,7 @@ const router = createRouter({
             path: '/',
             name: 'NotLogged',
             component: NotLogged,
-            children: [
-                {
+            children: [{
                     path: '/',
                     name: 'Notlog',
                     component: NotLog,

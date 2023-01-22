@@ -4,7 +4,7 @@
             <div class="md:grid md:grid-cols-3 md:gap-6">
                 <div class="md:col-span-1">
                     <div class="px-4 sm:px-0">
-                        <h3 class="text-lg font-medium leading-6 text-gray-900">Perfil Hematologico</h3>
+                        <h3 class="text-lg font-medium leading-6 text-gray-900">Perfil Coagulación</h3>
                         <p class="mt-1 text-sm text-gray-600">Use a permanent address where you can receive mail.</p>
                     </div>
                 </div>
@@ -30,100 +30,62 @@
 
                                     <!-- Primer INput -->
                                     <div class="col-span-6 sm:col-span-6 lg:col-span-2">
-                                        <label for="Hemoglobina H" class="block text-sm font-medium text-gray-700">Hemoglobina H <!--Tipo: Float -->
-                                         <span>(gr.%)</span></label>
+                                        <label for="T.sangría" class="block text-sm font-medium text-gray-700">T.sangría <!--Tipo: Entero -->
+                                         <span>(Seg)</span></label>
                                         <input type="text" name="city" id="city" autocomplete="address-level2"
                                             class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm">
                                     </div>
 
                                     <!-- Segundo Input -->
                                     <div class="col-span-6 sm:col-span-3 lg:col-span-2">
-                                        <label for="Hematocrito" class="block text-sm font-medium text-gray-700">Hematocrito <!--Tipo: Float -->
-                                        <span>(%)</span></label>
+                                        <label for="T.Coagulación" class="block text-sm font-medium text-gray-700">T.Coagulación <!--Tipo: Entero -->
+                                        <span>(Seg)</span></label>
                                         <input type="text" name="region" id="region" autocomplete="address-level1"
                                             class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm">
                                     </div>
 
                                     <!-- Tercer Input -->
                                     <div class="col-span-6 sm:col-span-3 lg:col-span-2">
-                                        <label for="Leucocitos H" class="block text-sm font-medium text-gray-700">Leucocitos H <!--Tipo: Entero -->
-                                        <span>(p/mm3)</span></label>
+                                        <label for="T.P Tromboplastina" class="block text-sm font-medium text-gray-700">T.P Tromboplastina <!--Tipo: Entero -->
+                                        <span>(Seg)</span></label>
                                         <input type="text" name="postal-code" id="postal-code"
                                             autocomplete="postal-code"
                                             class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm">
                                     </div>
                                      <div class="col-span-6 sm:col-span-6 lg:col-span-2">
-                                        <label for="Plaquetas" class="block text-sm font-medium text-gray-700">Plaquetas <!--Tipo: Entero (6 digitos) -->
-                                         <span>(p/mm3)</span></label>
+                                        <label for="Control T.P.T" class="block text-sm font-medium text-gray-700">Control T.P.T <!--Tipo: Entero -->
+                                         <span>(Seg)</span> <span>(V.N +/- 6seg)</span></label>
                                         <input type="text" name="city" id="city" autocomplete="address-level2"
                                             class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm">
                                     </div>
                                     <div class="col-span-6 sm:col-span-3 lg:col-span-2">
-                                        <label for="Hematíes H" class="block text-sm font-medium text-gray-700">Hematíes H <!--Tipo: Entero -->
-                                        <span>(mm3)</span></label>
+                                        <label for="T. Protrombina" class="block text-sm font-medium text-gray-700">T. Protrombina <!--Tipo: Float -->
+                                        <span>(Seg)</span></label> 
                                         <input type="text" name="region" id="region" autocomplete="address-level1"
                                             class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm">
                                     </div>
                                     <div class="col-span-6 sm:col-span-3 lg:col-span-2">
-                                        <label for="Reticulocitos" class="block text-sm font-medium text-gray-700">Reticulocitos <!--Tipo: Float -->
-                                        <span>(%)</span></label>
+                                        <label for="Control T.P" class="block text-sm font-medium text-gray-700">Control T.P <!--Tipo: Float -->
+                                        <span>(Seg)</span></label>
                                         <input type="text" name="postal-code" id="postal-code"
                                             autocomplete="postal-code"
                                             class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm">
                                     </div>
                                     <div class="col-span-6 sm:col-span-6 lg:col-span-2">
-                                        <label for="Eritrosedimentación" class="block text-sm font-medium text-gray-700">Eritrosedimentación <!--Tipo: Entero -->
-                                         <span>(1h)</span> <span>(mm)</span></label>
+                                        <label for="Razón T.P" class="block text-sm font-medium text-gray-700">Razón T.P <!--Tipo: Float -->
+                                        <span>(V.N 0,8-1,2)</span></label>
                                         <input type="text" name="city" id="city" autocomplete="address-level2"
                                             class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm">
                                     </div>
                                     <div class="col-span-6 sm:col-span-3 lg:col-span-2">
-                                        <label for="Coombs" class="block text-sm font-medium text-gray-700">Coombs <!--Tipo: Varchar -->
-                                        </label>
+                                        <label for="Fibrinógeno" class="block text-sm font-medium text-gray-700">Fibrinógeno <!--Tipo: Entero -->
+                                        <span>(mg/dl)</span><span>(V.N 200-400)</span></label>
                                         <input type="text" name="region" id="region" autocomplete="address-level1"
                                             class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm">
                                     </div>
                                     <div class="col-span-6 sm:col-span-3 lg:col-span-2">
-                                        <label for="Cayados" class="block text-sm font-medium text-gray-700">Cayados <!--Tipo: Float -->
-                                        <span>(%)</span></label>
-                                        <input type="text" name="postal-code" id="postal-code"
-                                            autocomplete="postal-code"
-                                            class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm">
-                                    </div>
-                                    <div class="col-span-6 sm:col-span-6 lg:col-span-2">
-                                        <label for="Neutrófilos" class="block text-sm font-medium text-gray-700">Neutrófilos <!--Tipo: Float -->
-                                         <span>(%)</span></label>
-                                        <input type="text" name="city" id="city" autocomplete="address-level2"
-                                            class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm">
-                                    </div>
-                                    <div class="col-span-6 sm:col-span-3 lg:col-span-2">
-                                        <label for="Linfocitos" class="block text-sm font-medium text-gray-700">Linfocitos <!--Tipo: Float -->
-                                        <span>(%)</span></label>
-                                        <input type="text" name="region" id="region" autocomplete="address-level1"
-                                            class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm">
-                                    </div>
-                                    <div class="col-span-6 sm:col-span-3 lg:col-span-2">
-                                        <label for="Eosinófilos" class="block text-sm font-medium text-gray-700">Eosinófilos <!--Tipo: Float -->
-                                        <span>(%)</span></label>
-                                        <input type="text" name="postal-code" id="postal-code"
-                                            autocomplete="postal-code"
-                                            class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm">
-                                    </div>
-                                    <div class="col-span-6 sm:col-span-6 lg:col-span-2">
-                                        <label for="Monocitos" class="block text-sm font-medium text-gray-700">Monocitos <!--Tipo: Float -->
-                                         <span>(%)</span></label>
-                                        <input type="text" name="city" id="city" autocomplete="address-level2"
-                                            class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm">
-                                    </div>
-                                    <div class="col-span-6 sm:col-span-3 lg:col-span-2">
-                                        <label for="Basófilos" class="block text-sm font-medium text-gray-700">Basófilos <!--Tipo: Float -->
-                                        <span>(%)</span></label>
-                                        <input type="text" name="region" id="region" autocomplete="address-level1"
-                                            class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm">
-                                    </div>
-                                    <div class="col-span-6 sm:col-span-3 lg:col-span-2">
-                                        <label for="Frotis" class="block text-sm font-medium text-gray-700">Frotis <!--Tipo: Varchar -->
-                                        </label>
+                                        <label for="Grupo Sanguíneo" class="block text-sm font-medium text-gray-700">Grupo Sanguíneo <!--Tipo: Varchar Númerico (A+,AB+,etc) -->
+                                        <span>(Rh(D))</span></label>
                                         <input type="text" name="postal-code" id="postal-code"
                                             autocomplete="postal-code"
                                             class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm">
