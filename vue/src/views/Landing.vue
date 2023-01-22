@@ -11,8 +11,8 @@
                 </p>
                 <div
                     class="flex flex-col space-y-4 sm:items-center sm:justify-center sm:flex-row sm:space-y-0 sm:space-x-4 lg:justify-start">
-                    <a rel="noopener noreferrer" href="#"
-                        class="px-8 py-3 text-lg font-semibold rounded bg-violet-400 text-gray-900">Solicitar</a>
+                    <router-link rel="noopener noreferrer" :to="{ name: 'InfoWhenLog' }"
+                        class="px-8 py-3 text-lg font-semibold rounded bg-violet-400 text-gray-900">Solicitar</router-link>
                     <!--                    <a rel="noopener noreferrer" href="#"
                        class="px-8 py-3 text-lg font-semibold border rounded border-gray-100">Malesuada</a>-->
                 </div>

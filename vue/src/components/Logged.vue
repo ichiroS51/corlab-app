@@ -115,7 +115,7 @@ const user = {
 }
 
 const navigation = [
-    {name: 'Inicio', href: '#', current: true},
+    {name: 'Inicio', href: '/app/landing', current: true},
     {name: 'Ver Resultados', href: '#', current: false},
     {name: 'Conòcenos', href: '#', current: false},
 ]
