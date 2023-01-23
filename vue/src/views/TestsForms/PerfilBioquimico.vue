@@ -148,7 +148,7 @@
                                     </div>
                                     <div class="col-span-6 sm:col-span-3 lg:col-span-2">
                                         <label for="Fósforo" class="block text-sm font-medium text-gray-700">Fósforo <!--Tipo: Float -->
-                                        <span>(mg/dl)</span><span>(A=&lt4,5/N=>4,6)</span></label>
+                                        <span>(mg/dl)</span><span>(A=2-4,4-5/N=>4,6)</span></label>
                                         <input type="text" name="region" id="region" autocomplete="address-level1"
                                             class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm">
                                     </div>

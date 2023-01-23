@@ -6,6 +6,8 @@ namespace Database\Seeders;
 use Illuminate\Database\Seeder;
 use Database\Seeders\AdminsSeeder;
 use Database\Seeders\ClientsSeeder;
+use Database\Seeders\ProfilesSeeder;
+use Database\Seeders\CatalogsSeeder;
 
 class DatabaseSeeder extends Seeder
 {
@@ -26,6 +28,8 @@ class DatabaseSeeder extends Seeder
         $this->call([
             AdminsSeeder::class,
             ClientsSeeder::class,
+            ProfilesSeeder::class,
+            CatalogsSeeder::class,
         ]);
     }
 }

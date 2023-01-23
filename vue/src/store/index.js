@@ -10,7 +10,7 @@ const store = createStore({
             ci: 0,
             email: '',
             phone: '',
-            token: 1324,
+            token: null,
             method: {},
             total_pay: 0,
             pay_number: 0,

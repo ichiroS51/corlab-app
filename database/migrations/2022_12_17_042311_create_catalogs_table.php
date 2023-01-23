@@ -17,10 +17,10 @@ return new class extends Migration
             $table->id();
             $table->integer('price');
             # relationships one to many with clients table
-            $table->unsignedBigInteger('client_id')->nullable();
-            $table->foreign('client_id')
+            $table->unsignedBigInteger('profile_id')->nullable();
+            $table->foreign('profile_id')
                 ->references('id')
-                ->on('clients')
+                ->on('profiles')
                 ->onDelete('set null');
             $table->timestamps();
         });

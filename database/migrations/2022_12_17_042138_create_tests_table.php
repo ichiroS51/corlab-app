@@ -16,8 +16,8 @@ return new class extends Migration
         Schema::create('tests', function (Blueprint $table) {
             $table->id();
             $table->string('test_name');
-            $table->text('description')->nullable();
             $table->string('test_type')->nullable();
+            // $table->text('description')->nullable();
             # relationships one to many with clients table
             $table->unsignedBigInteger('client_id')->nullable();
             $table->foreign('client_id')
