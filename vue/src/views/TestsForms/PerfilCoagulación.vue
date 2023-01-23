@@ -13,80 +13,72 @@
                         <div class="overflow-hidden shadow sm:rounded-md">
                             <div class="bg-white px-4 py-5 sm:p-6">
                                 <div class="grid grid-cols-6 gap-6">
-
                                     <div class="col-span-6 sm:col-span-3">
-                                        <label for="Nombre" class="block text-sm font-medium text-gray-700">Nombre
+                                        <label for="ci" class="block text-sm font-medium text-gray-700">Cédula
                                         </label>
-                                        <input type="text" name="first-name" id="first-name" autocomplete="given-name"
-                                            class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm">
-                                    </div>
-
-                                    <div class="col-span-6 sm:col-span-3">
-                                        <label for="Cédula" class="block text-sm font-medium text-gray-700">Cédula
-                                        </label>
-                                        <input type="text" name="last-name" id="last-name" autocomplete="family-name"
+                                        <input type="text" name="ci" id="ci" autocomplete="family-name"
                                             class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm">
                                     </div>
 
                                     <!-- Primer INput -->
                                     <div class="col-span-6 sm:col-span-6 lg:col-span-2">
-                                        <label for="T.sangría" class="block text-sm font-medium text-gray-700">T.sangría <!--Tipo: Entero -->
+                                        <label for="t_sangria" class="block text-sm font-medium text-gray-700">T.sangría <!--Tipo: Entero -->
                                          <span>(Seg)</span></label>
-                                        <input type="text" name="city" id="city" autocomplete="address-level2"
+                                        <input type="text" name="t_sangria" id="t_sangria" autocomplete="address-level2"
                                             class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm">
                                     </div>
 
                                     <!-- Segundo Input -->
                                     <div class="col-span-6 sm:col-span-3 lg:col-span-2">
-                                        <label for="T.Coagulación" class="block text-sm font-medium text-gray-700">T.Coagulación <!--Tipo: Entero -->
+                                        <label for="t_coagulacion" class="block text-sm font-medium text-gray-700">T.Coagulación <!--Tipo: Entero -->
                                         <span>(Seg)</span></label>
-                                        <input type="text" name="region" id="region" autocomplete="address-level1"
+                                        <input type="text" name="t_coagulacion" id="t_coagulacion" autocomplete="address-level1"
                                             class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm">
                                     </div>
 
                                     <!-- Tercer Input -->
                                     <div class="col-span-6 sm:col-span-3 lg:col-span-2">
-                                        <label for="T.P Tromboplastina" class="block text-sm font-medium text-gray-700">T.P Tromboplastina <!--Tipo: Entero -->
+                                        <label for="t_p_tromboplastina" class="block text-sm font-medium text-gray-700">T.P Tromboplastina <!--Tipo: Entero -->
                                         <span>(Seg)</span></label>
-                                        <input type="text" name="postal-code" id="postal-code"
+                                        <input type="text" name="t_p_tromboplastina" id="t_p_tromboplastina"
                                             autocomplete="postal-code"
                                             class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm">
                                     </div>
                                      <div class="col-span-6 sm:col-span-6 lg:col-span-2">
-                                        <label for="Control T.P.T" class="block text-sm font-medium text-gray-700">Control T.P.T <!--Tipo: Entero -->
+                                        <label for="control_t_p_t" class="block text-sm font-medium text-gray-700">Control T.P.T <!--Tipo: Entero -->
                                          <span>(Seg)</span> <span>(V.N +/- 6seg)</span></label>
-                                        <input type="text" name="city" id="city" autocomplete="address-level2"
+                                        <input type="text" name="control_t_p_t" id="control_t_p_t" autocomplete="address-level2"
                                             class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm">
                                     </div>
                                     <div class="col-span-6 sm:col-span-3 lg:col-span-2">
-                                        <label for="T. Protrombina" class="block text-sm font-medium text-gray-700">T. Protrombina <!--Tipo: Float -->
+                                        <label for="t_protrombina" class="block text-sm font-medium text-gray-700">T. Protrombina <!--Tipo: Float -->
                                         <span>(Seg)</span></label> 
-                                        <input type="text" name="region" id="region" autocomplete="address-level1"
+                                        <input type="text" name="t_protrombina" id="t_protrombina" autocomplete="address-level1"
                                             class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm">
                                     </div>
                                     <div class="col-span-6 sm:col-span-3 lg:col-span-2">
-                                        <label for="Control T.P" class="block text-sm font-medium text-gray-700">Control T.P <!--Tipo: Float -->
+                                        <label for="control_t_p" class="block text-sm font-medium text-gray-700">Control T.P <!--Tipo: Float -->
                                         <span>(Seg)</span></label>
-                                        <input type="text" name="postal-code" id="postal-code"
+                                        <input type="text" name="control_t_p" id="control_t_p"
                                             autocomplete="postal-code"
                                             class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm">
                                     </div>
                                     <div class="col-span-6 sm:col-span-6 lg:col-span-2">
-                                        <label for="Razón T.P" class="block text-sm font-medium text-gray-700">Razón T.P <!--Tipo: Float -->
+                                        <label for="razon_t_p" class="block text-sm font-medium text-gray-700">Razón T.P <!--Tipo: Float -->
                                         <span>(V.N 0,8-1,2)</span></label>
-                                        <input type="text" name="city" id="city" autocomplete="address-level2"
+                                        <input type="text" name="razon_t_p" id="razon_t_p" autocomplete="address-level2"
                                             class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm">
                                     </div>
                                     <div class="col-span-6 sm:col-span-3 lg:col-span-2">
-                                        <label for="Fibrinógeno" class="block text-sm font-medium text-gray-700">Fibrinógeno <!--Tipo: Entero -->
+                                        <label for="fibrinogeno" class="block text-sm font-medium text-gray-700">Fibrinógeno <!--Tipo: Entero -->
                                         <span>(mg/dl)</span><span>(V.N 200-400)</span></label>
-                                        <input type="text" name="region" id="region" autocomplete="address-level1"
+                                        <input type="text" name="fibrinogeno" id="fibrinogeno" autocomplete="address-level1"
                                             class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm">
                                     </div>
                                     <div class="col-span-6 sm:col-span-3 lg:col-span-2">
-                                        <label for="Grupo Sanguíneo" class="block text-sm font-medium text-gray-700">Grupo Sanguíneo <!--Tipo: Varchar Númerico (A+,AB+,etc) -->
+                                        <label for="grupo_sanguineo" class="block text-sm font-medium text-gray-700">Grupo Sanguíneo <!--Tipo: Varchar Númerico (A+,AB+,etc) -->
                                         <span>(Rh(D))</span></label>
-                                        <input type="text" name="postal-code" id="postal-code"
+                                        <input type="text" name="grupo_sanguineo" id="grupo_sanguineos"
                                             autocomplete="postal-code"
                                             class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm">
                                     </div>

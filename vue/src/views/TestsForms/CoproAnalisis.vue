@@ -13,9 +13,8 @@
                         <div class="overflow-hidden shadow sm:rounded-md">
                             <div class="bg-white px-4 py-5 sm:p-6">
                                 <div class="grid grid-cols-6 gap-6">
-
                                     <div class="col-span-6 sm:col-span-3">
-                                        <label for="Nombre" class="block text-sm font-medium text-gray-700">Nombre
+                                        <label for="ci" class="block text-sm font-medium text-gray-700">Cédula
                                         </label>
                                         <input type="text" name="first-name" id="first-name" autocomplete="given-name"
                                             class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm">
@@ -30,69 +29,69 @@
 
                                     <!-- Primer INput -->
                                     <div class="col-span-6 sm:col-span-6 lg:col-span-2">
-                                        <label for="Aspecto C" class="block text-sm font-medium text-gray-700">Aspecto C <!--Tipo: Varchar -->
+                                        <label for="aspecto_c" class="block text-sm font-medium text-gray-700">Aspecto C <!--Tipo: Varchar -->
                                         </label>
-                                        <input type="text" name="city" id="city" autocomplete="address-level2"
+                                        <input type="text" name="aspecto_c" id="aspecto_c" autocomplete="address-level2"
                                             class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm">
                                     </div>
 
                                     <!-- Segundo Input -->
                                     <div class="col-span-6 sm:col-span-3 lg:col-span-2">
-                                        <label for="Color C" class="block text-sm font-medium text-gray-700">Color C <!--Tipo: Varchar -->
+                                        <label for="color_c" class="block text-sm font-medium text-gray-700">Color C <!--Tipo: Varchar -->
                                         </label>
-                                        <input type="text" name="region" id="region" autocomplete="address-level1"
+                                        <input type="text" name="color_c" id="color_c" autocomplete="address-level1"
                                             class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm">
                                     </div>
 
                                     <!-- Tercer Input -->
                                     <div class="col-span-6 sm:col-span-3 lg:col-span-2">
-                                        <label for="Consistencia" class="block text-sm font-medium text-gray-700">Consistencia <!--Tipo: Varchar -->
+                                        <label for="consistencia" class="block text-sm font-medium text-gray-700">Consistencia <!--Tipo: Varchar -->
                                         </label>
-                                        <input type="text" name="postal-code" id="postal-code"
+                                        <input type="text" name="consistencia" id="consistencia"
                                             autocomplete="postal-code"
                                             class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm">
                                     </div>
                                      <div class="col-span-6 sm:col-span-6 lg:col-span-2">
-                                        <label for="Reacción C" class="block text-sm font-medium text-gray-700">Reacción C <!--Tipo: Varchar -->
+                                        <label for="reaccion_c" class="block text-sm font-medium text-gray-700">Reacción C <!--Tipo: Varchar -->
                                         </label>
-                                        <input type="text" name="city" id="city" autocomplete="address-level2"
+                                        <input type="text" name="reaccion_c" id="reaccion_c" autocomplete="address-level2"
                                             class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm">
                                     </div>
                                     <div class="col-span-6 sm:col-span-3 lg:col-span-2">
-                                        <label for="Moco" class="block text-sm font-medium text-gray-700">Moco <!--Tipo: Varchar -->
+                                        <label for="moco" class="block text-sm font-medium text-gray-700">Moco <!--Tipo: Varchar -->
                                         </label>
-                                        <input type="text" name="region" id="region" autocomplete="address-level1"
+                                        <input type="text" name="moco" id="moco" autocomplete="address-level1"
                                             class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm">
                                     </div>
                                     <div class="col-span-6 sm:col-span-3 lg:col-span-2">
-                                        <label for="Sangre" class="block text-sm font-medium text-gray-700">Sangre <!--Tipo: Varchar -->
+                                        <label for="sangre" class="block text-sm font-medium text-gray-700">Sangre <!--Tipo: Varchar -->
                                         </label>
-                                        <input type="text" name="postal-code" id="postal-code"
+                                        <input type="text" name="sangre" id="sangre"
                                             autocomplete="postal-code"
                                             class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm">
                                     </div>
                                     <div class="col-span-6 sm:col-span-6 lg:col-span-2">
-                                        <label for="Sangre Oculta" class="block text-sm font-medium text-gray-700">Sangre Oculta <!--Tipo: Varchar -->
+                                        <label for="sangre_oculta" class="block text-sm font-medium text-gray-700">Sangre Oculta <!--Tipo: Varchar -->
                                         <span>(+ o -)</span></label>
-                                        <input type="text" name="city" id="city" autocomplete="address-level2"
+                                        <input type="text" name="sangre_oculta" id="sangre_oculta" autocomplete="address-level2"
                                             class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm">
                                     </div>
                                     <div class="col-span-6 sm:col-span-3 lg:col-span-2">
-                                        <label for="Helmintos" class="block text-sm font-medium text-gray-700">Helmintos <!--Tipo: Varchar -->
+                                        <label for="helmintos" class="block text-sm font-medium text-gray-700">Helmintos <!--Tipo: Varchar -->
                                         </label>
-                                        <input type="text" name="region" id="region" autocomplete="address-level1"
+                                        <input type="text" name="helmintos" id="helmintos" autocomplete="address-level1"
                                             class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm">
                                     </div>
                                     <div class="col-span-6 sm:col-span-3 lg:col-span-2">
-                                        <label for="Protozoarios" class="block text-sm font-medium text-gray-700">Protozoarios <!--Tipo: Varchar -->
+                                        <label for="protozoarios" class="block text-sm font-medium text-gray-700">Protozoarios <!--Tipo: Varchar -->
                                         </label>
-                                        <input type="text" name="region" id="region" autocomplete="address-level1"
+                                        <input type="text" name="protozoarios" id="protozoarios" autocomplete="address-level1"
                                             class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm">
                                     </div>
                                     <div class="col-span-6 sm:col-span-3 lg:col-span-2">
-                                        <label for="Otros C" class="block text-sm font-medium text-gray-700">Otros <!--Tipo: Text -->
+                                        <label for="otros_c" class="block text-sm font-medium text-gray-700">Otros <!--Tipo: Text -->
                                         </label>
-                                        <input type="text" name="region" id="region" autocomplete="address-level1"
+                                        <input type="text" name="otros_c" id="otros_c" autocomplete="address-level1"
                                             class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm">
                                     </div>
                                 </div>

@@ -15,154 +15,147 @@
                                 <div class="grid grid-cols-6 gap-6">
 
                                     <div class="col-span-6 sm:col-span-3">
-                                        <label for="Nombre" class="block text-sm font-medium text-gray-700">Nombre
+                                        <label for="ci" class="block text-sm font-medium text-gray-700">Cédula
                                         </label>
-                                        <input type="text" name="first-name" id="first-name" autocomplete="given-name"
-                                            class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm">
-                                    </div>
-
-                                    <div class="col-span-6 sm:col-span-3">
-                                        <label for="Cédula" class="block text-sm font-medium text-gray-700">Cédula
-                                        </label>
-                                        <input type="text" name="last-name" id="last-name" autocomplete="family-name"
+                                        <input type="text" name="ci" id="ci" autocomplete="family-name"
                                             class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm">
                                     </div>
 
                                     <!-- Primer INput -->
                                     <div class="col-span-6 sm:col-span-6 lg:col-span-2">
-                                        <label for="Glicemia" class="block text-sm font-medium text-gray-700">Glicemia <!--Tipo: Entero -->
+                                        <label for="glicemia" class="block text-sm font-medium text-gray-700">Glicemia <!--Tipo: Entero -->
                                          <span>(mg/dl)</span> <span>(V.N - 70 a 100)</span></label>
-                                        <input type="text" name="city" id="city" autocomplete="address-level2"
+                                        <input type="text" name="glicemia" id="glicemia" autocomplete="address-level2"
                                             class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm">
                                     </div>
 
                                     <!-- Segundo Input -->
                                     <div class="col-span-6 sm:col-span-3 lg:col-span-2">
-                                        <label for="Urea" class="block text-sm font-medium text-gray-700">Urea <!--Tipo: Entero -->
+                                        <label for="urea" class="block text-sm font-medium text-gray-700">Urea <!--Tipo: Entero -->
                                         <span>(mg/dl)</span> <span>(V.N 15 a 40)</span></label>
-                                        <input type="text" name="region" id="region" autocomplete="address-level1"
+                                        <input type="text" name="urea" id="urea" autocomplete="address-level1"
                                             class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm">
                                     </div>
 
                                     <!-- Tercer Input -->
                                     <div class="col-span-6 sm:col-span-3 lg:col-span-2">
-                                        <label for="Creatinina" class="block text-sm font-medium text-gray-700">Creatinina <!--Tipo: Float -->
+                                        <label for="creatinina" class="block text-sm font-medium text-gray-700">Creatinina <!--Tipo: Float -->
                                         <span>(mg/dl)</span> <span>(V.N 0,4 a 1,5)</span></label>
-                                        <input type="text" name="postal-code" id="postal-code"
+                                        <input type="text" name="creatinina" id="creatinina"
                                             autocomplete="postal-code"
                                             class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm">
                                     </div>
                                      <div class="col-span-6 sm:col-span-6 lg:col-span-2">
-                                        <label for="Acido Urico" class="block text-sm font-medium text-gray-700">Acido Urico <!--Tipo: Float -->
+                                        <label for="acido_urico" class="block text-sm font-medium text-gray-700">Acido Urico <!--Tipo: Float -->
                                          <span>(mg/dl)</span> <span>(Menor a 5,6)</span></label>
-                                        <input type="text" name="city" id="city" autocomplete="address-level2"
+                                        <input type="text" name="acido_urico" id="acido_urico" autocomplete="address-level2"
                                             class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm">
                                     </div>
                                     <div class="col-span-6 sm:col-span-3 lg:col-span-2">
-                                        <label for="Colesterol" class="block text-sm font-medium text-gray-700">Colesterol <!--Tipo: Entero -->
+                                        <label for="colesterol" class="block text-sm font-medium text-gray-700">Colesterol <!--Tipo: Entero -->
                                         <span>(mg/dl)</span> <span>(V.N Hasta 200)</span></label>
-                                        <input type="text" name="region" id="region" autocomplete="address-level1"
+                                        <input type="text" name="colesterol" id="colesterol" autocomplete="address-level1"
                                             class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm">
                                     </div>
                                     <div class="col-span-6 sm:col-span-3 lg:col-span-2">
-                                        <label for="Triglicéridos" class="block text-sm font-medium text-gray-700">Triglicéridos <!--Tipo: Entero -->
+                                        <label for="trigliceridos" class="block text-sm font-medium text-gray-700">Triglicéridos <!--Tipo: Entero -->
                                         <span>(mg/dl)</span> <span>(V.N 35 a 165)</span></label>
-                                        <input type="text" name="postal-code" id="postal-code"
+                                        <input type="text" name="trigliceridos" id="trigliceridos"
                                             autocomplete="postal-code"
                                             class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm">
                                     </div>
                                     <div class="col-span-6 sm:col-span-6 lg:col-span-2">
-                                        <label for="H.D.L.COL" class="block text-sm font-medium text-gray-700">H.D.L.COL <!--Tipo: Entero -->
+                                        <label for="h_d_l_col" class="block text-sm font-medium text-gray-700">H.D.L.COL <!--Tipo: Entero -->
                                         <span>(mg/dl)</span><span>(M=>45/H=>40)</span></label>
-                                        <input type="text" name="city" id="city" autocomplete="address-level2"
+                                        <input type="text" name="h_d_l_col" id="h_d_l_col" autocomplete="address-level2"
                                             class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm">
                                     </div>
                                     <div class="col-span-6 sm:col-span-3 lg:col-span-2">
-                                        <label for="L.D.L.COL" class="block text-sm font-medium text-gray-700">L.D.L.COL <!--Tipo: Entero -->
+                                        <label for="l_d_l_col" class="block text-sm font-medium text-gray-700">L.D.L.COL <!--Tipo: Entero -->
                                         <span>(mg/dl)</span><span>(Entre 120 y 130)</span></label>
-                                        <input type="text" name="region" id="region" autocomplete="address-level1"
+                                        <input type="text" name="l_d_l_col" id="l_d_l_col" autocomplete="address-level1"
                                             class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm">
                                     </div>
                                     <div class="col-span-6 sm:col-span-3 lg:col-span-2">
-                                        <label for="V.L.D.L.COL" class="block text-sm font-medium text-gray-700">V.L.D.L.COL <!--Tipo: Entero -->
+                                        <label for="v_l_d_l_col" class="block text-sm font-medium text-gray-700">V.L.D.L.COL <!--Tipo: Entero -->
                                         <span>(mg/dl)</span></label>
-                                        <input type="text" name="postal-code" id="postal-code"
+                                        <input type="text" name="v_l_d_l_col" id="v_l_d_l_col"
                                             autocomplete="postal-code"
                                             class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm">
                                     </div>
                                     <div class="col-span-6 sm:col-span-6 lg:col-span-2">
-                                        <label for="Bilirrubina total" class="block text-sm font-medium text-gray-700">Bilirrubina total <!--Tipo: Float -->
+                                        <label for="bilirrubina_total" class="block text-sm font-medium text-gray-700">Bilirrubina total <!--Tipo: Float -->
                                          <span>(mg/dl)</span><span>(hasta 1,0)</span></label>
-                                        <input type="text" name="city" id="city" autocomplete="address-level2"
+                                        <input type="text" name="bilirrubina_total" id="bilirrubina_total" autocomplete="address-level2"
                                             class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm">
                                     </div>
                                     <div class="col-span-6 sm:col-span-3 lg:col-span-2">
-                                        <label for="Bilirrubina directa" class="block text-sm font-medium text-gray-700">Bilirrubina directa <!--Tipo: Float -->
+                                        <label for="bilirrubina_directa" class="block text-sm font-medium text-gray-700">Bilirrubina directa <!--Tipo: Float -->
                                         <span>(mg/dl)</span><span>(hasta 0,3)</span></label>
-                                        <input type="text" name="region" id="region" autocomplete="address-level1"
+                                        <input type="text" name="bilirrubina_directa" id="bilirrubina_directa" autocomplete="address-level1"
                                             class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm">
                                     </div>
                                     <div class="col-span-6 sm:col-span-3 lg:col-span-2">
-                                        <label for="Bilirrubina indirecta" class="block text-sm font-medium text-gray-700">Bilirrubina indirecta <!--Tipo: Float -->
+                                        <label for="bilirrubina_indirecta" class="block text-sm font-medium text-gray-700">Bilirrubina indirecta <!--Tipo: Float -->
                                         <span>(mg/dl)</span></label>
-                                        <input type="text" name="postal-code" id="postal-code"
+                                        <input type="text" name="bilirrubina_indirecta" id="bilirrubina_indirecta"
                                             autocomplete="postal-code"
                                             class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm">
                                     </div>
                                     <div class="col-span-6 sm:col-span-6 lg:col-span-2">
-                                        <label for="Proteinas totales" class="block text-sm font-medium text-gray-700">Proteinas totales <!--Tipo: Float -->
+                                        <label for="proteinas_totales" class="block text-sm font-medium text-gray-700">Proteinas totales <!--Tipo: Float -->
                                          <span>(g/dl)</span><span>(6,0-8,0)</span></label>
-                                        <input type="text" name="city" id="city" autocomplete="address-level2"
+                                        <input type="text" name="proteinas_totales" id="proteinas_totales" autocomplete="address-level2"
                                             class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm">
                                     </div>
                                     <div class="col-span-6 sm:col-span-3 lg:col-span-2">
-                                        <label for="Albúmina" class="block text-sm font-medium text-gray-700">Albúmina <!--Tipo: Float -->
+                                        <label for="albumina" class="block text-sm font-medium text-gray-700">Albúmina <!--Tipo: Float -->
                                         <span>(g/dl)</span><span>(3,5-4,8)</span></label>
-                                        <input type="text" name="region" id="region" autocomplete="address-level1"
+                                        <input type="text" name="albumina" id="albumina" autocomplete="address-level1"
                                             class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm">
                                     </div>
                                     <div class="col-span-6 sm:col-span-3 lg:col-span-2">
-                                        <label for="Globulinas" class="block text-sm font-medium text-gray-700">Globulinas <!--Tipo: Float -->
+                                        <label for="globulinas" class="block text-sm font-medium text-gray-700">Globulinas <!--Tipo: Float -->
                                         <span>(g/dl)</span><span>(1,5-3,0)</span></label>
-                                        <input type="text" name="postal-code" id="postal-code"
+                                        <input type="text" name="globulinas" id="globulinas"
                                             autocomplete="postal-code"
                                             class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm">
                                     </div>
                                     <div class="col-span-6 sm:col-span-6 lg:col-span-2">
-                                        <label for="Relación A/G" class="block text-sm font-medium text-gray-700">Relación A/G <!--Tipo: Float -->
+                                        <label for="relacion_a_g" class="block text-sm font-medium text-gray-700">Relación A/G <!--Tipo: Float -->
                                         </label>
-                                        <input type="text" name="city" id="city" autocomplete="address-level2"
+                                        <input type="text" name="relacion_a_g" id="relacion_a_g" autocomplete="address-level2"
                                             class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm">
                                     </div>
                                     <div class="col-span-6 sm:col-span-3 lg:col-span-2">
-                                        <label for="Sodio" class="block text-sm font-medium text-gray-700">Sodio <!--Tipo: Entero -->
+                                        <label for="sodio" class="block text-sm font-medium text-gray-700">Sodio <!--Tipo: Entero -->
                                         <span>(mg/dl)</span><span>(V.N 135 a 155)</span></label>
-                                        <input type="text" name="region" id="region" autocomplete="address-level1"
+                                        <input type="text" name="sodio" id="sodio" autocomplete="address-level1"
                                             class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm">
                                     </div>
                                     <div class="col-span-6 sm:col-span-3 lg:col-span-2">
-                                        <label for="Potasio" class="block text-sm font-medium text-gray-700">Potasio <!--Tipo: Float -->
+                                        <label for="potasio" class="block text-sm font-medium text-gray-700">Potasio <!--Tipo: Float -->
                                         <span>(mg/dl)</span><span>(V.N 3,5-5,3)</span></label>
-                                        <input type="text" name="postal-code" id="postal-code"
+                                        <input type="text" name="potasio" id="potasio"
                                             autocomplete="postal-code"
                                             class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm">
                                     </div>
                                     <div class="col-span-6 sm:col-span-6 lg:col-span-2">
-                                        <label for="Calcio" class="block text-sm font-medium text-gray-700">Calcio <!--Tipo: Float -->
+                                        <label for="calcio" class="block text-sm font-medium text-gray-700">Calcio <!--Tipo: Float -->
                                          <span>(mg/dl)</span><span>(V.N 8,8-11,0)</span></label>
-                                        <input type="text" name="city" id="city" autocomplete="address-level2"
+                                        <input type="text" name="calcio" id="calcio" autocomplete="address-level2"
                                             class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm">
                                     </div>
                                     <div class="col-span-6 sm:col-span-3 lg:col-span-2">
                                         <label for="Fósforo" class="block text-sm font-medium text-gray-700">Fósforo <!--Tipo: Float -->
-                                        <span>(mg/dl)</span><span>(A=2,4-4,5 / N=>4,6)</span></label>
+                                        <span>(mg/dl)</span><span>(A=&lt4,5/N=>4,6)</span></label>
                                         <input type="text" name="region" id="region" autocomplete="address-level1"
                                             class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm">
                                     </div>
                                     <div class="col-span-6 sm:col-span-3 lg:col-span-2">
-                                        <label for="Hierro" class="block text-sm font-medium text-gray-700">Hierro <!--Tipo: Float -->
+                                        <label for="hierro" class="block text-sm font-medium text-gray-700">Hierro <!--Tipo: Float -->
                                         <span>(mg/dl)</span></label>
-                                        <input type="text" name="postal-code" id="postal-code"
+                                        <input type="text" name="hierro" id="hierro"
                                             autocomplete="postal-code"
                                             class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm">
                                     </div>

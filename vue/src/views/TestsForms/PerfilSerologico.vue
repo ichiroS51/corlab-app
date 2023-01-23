@@ -13,87 +13,79 @@
                         <div class="overflow-hidden shadow sm:rounded-md">
                             <div class="bg-white px-4 py-5 sm:p-6">
                                 <div class="grid grid-cols-6 gap-6">
-
                                     <div class="col-span-6 sm:col-span-3">
-                                        <label for="Nombre" class="block text-sm font-medium text-gray-700">Nombre
+                                        <label for="ci" class="block text-sm font-medium text-gray-700">Cédula
                                         </label>
-                                        <input type="text" name="first-name" id="first-name" autocomplete="given-name"
-                                            class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm">
-                                    </div>
-
-                                    <div class="col-span-6 sm:col-span-3">
-                                        <label for="Cédula" class="block text-sm font-medium text-gray-700">Cédula
-                                        </label>
-                                        <input type="text" name="last-name" id="last-name" autocomplete="family-name"
+                                        <input type="text" name="ci" id="ci" autocomplete="family-name"
                                             class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm">
                                     </div>
 
                                     <!-- Primer INput -->
                                     <div class="col-span-6 sm:col-span-6 lg:col-span-2">
-                                        <label for="VDRL" class="block text-sm font-medium text-gray-700">VDRL <!--Tipo: Varchar -->
+                                        <label for="vdrl" class="block text-sm font-medium text-gray-700">VDRL <!--Tipo: Varchar -->
                                          <span>(Reactivo o No)</span></label>
-                                        <input type="text" name="city" id="city" autocomplete="address-level2"
+                                        <input type="text" name="vdrl" id="vdrl" autocomplete="address-level2"
                                             class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm">
                                     </div>
 
                                     <!-- Segundo Input -->
                                     <div class="col-span-6 sm:col-span-3 lg:col-span-2">
-                                        <label for="ASTO" class="block text-sm font-medium text-gray-700">ASTO <!--Tipo: Varchar -->
+                                        <label for="asto" class="block text-sm font-medium text-gray-700">ASTO <!--Tipo: Varchar -->
                                         <span>(+ o -)</span></label>
-                                        <input type="text" name="region" id="region" autocomplete="address-level1"
+                                        <input type="text" name="asto" id="asto" autocomplete="address-level1"
                                             class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm">
                                     </div>
 
                                     <!-- Tercer Input -->
                                     <div class="col-span-6 sm:col-span-3 lg:col-span-2">
-                                        <label for="R.A. test" class="block text-sm font-medium text-gray-700">R.A. test <!--Tipo: Varchar -->
+                                        <label for="r_a_test" class="block text-sm font-medium text-gray-700">R.A. test <!--Tipo: Varchar -->
                                         <span>(+ o -)</span></label>
-                                        <input type="text" name="postal-code" id="postal-code"
+                                        <input type="text" name="r_a_test" id="r_a_test"
                                             autocomplete="postal-code"
                                             class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm">
                                     </div>
                                      <div class="col-span-6 sm:col-span-6 lg:col-span-2">
-                                        <label for="P.C.R" class="block text-sm font-medium text-gray-700">P.C.R <!--Tipo: Varchar -->
+                                        <label for="p_c_r" class="block text-sm font-medium text-gray-700">P.C.R <!--Tipo: Varchar -->
                                          <span>(+ o -)</span></label>
-                                        <input type="text" name="city" id="city" autocomplete="address-level2"
+                                        <input type="text" name="p_c_r" id="p_c_r" autocomplete="address-level2"
                                             class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm">
                                     </div>
                                     <div class="col-span-6 sm:col-span-3 lg:col-span-2">
-                                        <label for="Ag. Febriles" class="block text-sm font-medium text-gray-700">Ag. Febriles <!--Tipo: Varchar -->
+                                        <label for="ag_febriles" class="block text-sm font-medium text-gray-700">Ag. Febriles <!--Tipo: Varchar -->
                                         <span>(+ o -)</span></label>
-                                        <input type="text" name="region" id="region" autocomplete="address-level1"
+                                        <input type="text" name="ag_febriles" id="ag_febriles" autocomplete="address-level1"
                                             class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm">
                                     </div>
                                     <div class="col-span-6 sm:col-span-3 lg:col-span-2">
-                                        <label for="Cel. L.E." class="block text-sm font-medium text-gray-700">Cel. L.E. <!--Tipo: Varchar -->
+                                        <label for="cel_l_e" class="block text-sm font-medium text-gray-700">Cel. L.E. <!--Tipo: Varchar -->
                                         <span>(+ o -)</span></label>
-                                        <input type="text" name="postal-code" id="postal-code"
+                                        <input type="text" name="cel_l_e" id="cel_l_e"
                                             autocomplete="postal-code"
                                             class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm">
                                     </div>
                                     <div class="col-span-6 sm:col-span-6 lg:col-span-2">
-                                        <label for="H.I.V (I y II) Elisa" class="block text-sm font-medium text-gray-700">H.I.V (I y II) Elisa <!--Tipo: Varchar -->
+                                        <label for="h_i_v_elisa" class="block text-sm font-medium text-gray-700">H.I.V (I y II) Elisa <!--Tipo: Varchar -->
                                         <span>(Reactivo o No)</span></label>
-                                        <input type="text" name="city" id="city" autocomplete="address-level2"
+                                        <input type="text" name="h_i_v_elisa" id="h_i_v_elisa" autocomplete="address-level2"
                                             class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm">
                                     </div>
                                     <div class="col-span-6 sm:col-span-3 lg:col-span-2">
-                                        <label for="Chaga-test" class="block text-sm font-medium text-gray-700">Chaga-test <!--Tipo: Varchar -->
+                                        <label for="chaga_test" class="block text-sm font-medium text-gray-700">Chaga-test <!--Tipo: Varchar -->
                                         <span>(+ o -)</span></label>
-                                        <input type="text" name="region" id="region" autocomplete="address-level1"
+                                        <input type="text" name="chaga_test" id="chaga_test" autocomplete="address-level1"
                                             class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm">
                                     </div>
                                     <div class="col-span-6 sm:col-span-3 lg:col-span-2">
-                                        <label for="Toxo-test" class="block text-sm font-medium text-gray-700">Toxo-test <!--Tipo: Varchar -->
+                                        <label for="toxo_test" class="block text-sm font-medium text-gray-700">Toxo-test <!--Tipo: Varchar -->
                                         <span>(+ o -)</span></label>
-                                        <input type="text" name="postal-code" id="postal-code"
+                                        <input type="text" name="toxo_test" id="toxo_test"
                                             autocomplete="postal-code"
                                             class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm">
                                     </div>
                                     <div class="col-span-6 sm:col-span-3 lg:col-span-2">
-                                        <label for="Mono-test" class="block text-sm font-medium text-gray-700">Mono-test <!--Tipo: Varchar -->
+                                        <label for="mono-test" class="block text-sm font-medium text-gray-700">Mono-test <!--Tipo: Varchar -->
                                         <span>(+ o -)</span></label>
-                                        <input type="text" name="postal-code" id="postal-code"
+                                        <input type="text" name="mono-test" id="mono-test"
                                             autocomplete="postal-code"
                                             class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm">
                                     </div>
