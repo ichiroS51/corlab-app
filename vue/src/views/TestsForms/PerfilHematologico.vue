@@ -13,118 +13,110 @@
                         <div class="overflow-hidden shadow sm:rounded-md">
                             <div class="bg-white px-4 py-5 sm:p-6">
                                 <div class="grid grid-cols-6 gap-6">
-
                                     <div class="col-span-6 sm:col-span-3">
-                                        <label for="Nombre" class="block text-sm font-medium text-gray-700">Nombre
+                                        <label for="ci" class="block text-sm font-medium text-gray-700">Cédula
                                         </label>
-                                        <input type="text" name="first-name" id="first-name" autocomplete="given-name"
-                                            class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm">
-                                    </div>
-
-                                    <div class="col-span-6 sm:col-span-3">
-                                        <label for="Cédula" class="block text-sm font-medium text-gray-700">Cédula
-                                        </label>
-                                        <input type="text" name="last-name" id="last-name" autocomplete="family-name"
+                                        <input type="text" name="ci" id="last-name" autocomplete="family-name"
                                             class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm">
                                     </div>
 
                                     <!-- Primer INput -->
                                     <div class="col-span-6 sm:col-span-6 lg:col-span-2">
-                                        <label for="Hemoglobina H" class="block text-sm font-medium text-gray-700">Hemoglobina H <!--Tipo: Float -->
+                                        <label for="hemoglobina_h" class="block text-sm font-medium text-gray-700">Hemoglobina H <!--Tipo: Float -->
                                          <span>(gr.%)</span></label>
-                                        <input type="text" name="city" id="city" autocomplete="address-level2"
+                                        <input type="text" name="hemoglobina_h" id="hemoglobina_h" autocomplete="address-level2"
                                             class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm">
                                     </div>
 
                                     <!-- Segundo Input -->
                                     <div class="col-span-6 sm:col-span-3 lg:col-span-2">
-                                        <label for="Hematocrito" class="block text-sm font-medium text-gray-700">Hematocrito <!--Tipo: Float -->
+                                        <label for="hematocrito" class="block text-sm font-medium text-gray-700">Hematocrito <!--Tipo: Float -->
                                         <span>(%)</span></label>
-                                        <input type="text" name="region" id="region" autocomplete="address-level1"
+                                        <input type="text" name="hematocrito" id="hematocrito" autocomplete="address-level1"
                                             class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm">
                                     </div>
 
                                     <!-- Tercer Input -->
                                     <div class="col-span-6 sm:col-span-3 lg:col-span-2">
-                                        <label for="Leucocitos H" class="block text-sm font-medium text-gray-700">Leucocitos H <!--Tipo: Entero -->
+                                        <label for="leucocitos_h" class="block text-sm font-medium text-gray-700">Leucocitos H <!--Tipo: Entero -->
                                         <span>(p/mm3)</span></label>
-                                        <input type="text" name="postal-code" id="postal-code"
+                                        <input type="text" name="leucocitos_h" id="leucocitos_h"
                                             autocomplete="postal-code"
                                             class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm">
                                     </div>
                                      <div class="col-span-6 sm:col-span-6 lg:col-span-2">
-                                        <label for="Plaquetas" class="block text-sm font-medium text-gray-700">Plaquetas <!--Tipo: Entero (6 digitos) -->
+                                        <label for="plaquetas" class="block text-sm font-medium text-gray-700">Plaquetas <!--Tipo: Entero (6 digitos) -->
                                          <span>(p/mm3)</span></label>
-                                        <input type="text" name="city" id="city" autocomplete="address-level2"
+                                        <input type="text" name="plaquetas" id="plaquetas" autocomplete="address-level2"
                                             class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm">
                                     </div>
                                     <div class="col-span-6 sm:col-span-3 lg:col-span-2">
-                                        <label for="Hematíes H" class="block text-sm font-medium text-gray-700">Hematíes H <!--Tipo: Entero -->
+                                        <label for="hematies_h" class="block text-sm font-medium text-gray-700">Hematíes H <!--Tipo: Entero -->
                                         <span>(mm3)</span></label>
-                                        <input type="text" name="region" id="region" autocomplete="address-level1"
+                                        <input type="text" name="hematies_h" id="hematies_h" autocomplete="address-level1"
                                             class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm">
                                     </div>
                                     <div class="col-span-6 sm:col-span-3 lg:col-span-2">
-                                        <label for="Reticulocitos" class="block text-sm font-medium text-gray-700">Reticulocitos <!--Tipo: Float -->
+                                        <label for="reticulocitos" class="block text-sm font-medium text-gray-700">Reticulocitos <!--Tipo: Float -->
                                         <span>(%)</span></label>
-                                        <input type="text" name="postal-code" id="postal-code"
+                                        <input type="text" name="reticulocitos" id="reticulocitos"
                                             autocomplete="postal-code"
                                             class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm">
                                     </div>
                                     <div class="col-span-6 sm:col-span-6 lg:col-span-2">
-                                        <label for="Eritrosedimentación" class="block text-sm font-medium text-gray-700">Eritrosedimentación <!--Tipo: Entero -->
+                                        <label for="eritrosedimentacion" class="block text-sm font-medium text-gray-700">Eritrosedimentación <!--Tipo: Entero -->
                                          <span>(1h)</span> <span>(mm)</span></label>
-                                        <input type="text" name="city" id="city" autocomplete="address-level2"
+                                        <input type="text" name="eritrosedimentacion" id="eritrosedimentacion" autocomplete="address-level2"
                                             class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm">
                                     </div>
                                     <div class="col-span-6 sm:col-span-3 lg:col-span-2">
-                                        <label for="Coombs" class="block text-sm font-medium text-gray-700">Coombs <!--Tipo: Varchar -->
+                                        <label for="coombs" class="block text-sm font-medium text-gray-700">Coombs <!--Tipo: Varchar -->
                                         </label>
-                                        <input type="text" name="region" id="region" autocomplete="address-level1"
+                                        <input type="text" name="coombs" id="coombs" autocomplete="address-level1"
                                             class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm">
                                     </div>
                                     <div class="col-span-6 sm:col-span-3 lg:col-span-2">
-                                        <label for="Cayados" class="block text-sm font-medium text-gray-700">Cayados <!--Tipo: Float -->
+                                        <label for="cayados" class="block text-sm font-medium text-gray-700">Cayados <!--Tipo: Float -->
                                         <span>(%)</span></label>
-                                        <input type="text" name="postal-code" id="postal-code"
+                                        <input type="text" name="cayados" id="cayados"
                                             autocomplete="postal-code"
                                             class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm">
                                     </div>
                                     <div class="col-span-6 sm:col-span-6 lg:col-span-2">
-                                        <label for="Neutrófilos" class="block text-sm font-medium text-gray-700">Neutrófilos <!--Tipo: Float -->
+                                        <label for="neutrofilos" class="block text-sm font-medium text-gray-700">Neutrófilos <!--Tipo: Float -->
                                          <span>(%)</span></label>
-                                        <input type="text" name="city" id="city" autocomplete="address-level2"
+                                        <input type="text" name="neutrofilos" id="neutrofilos" autocomplete="address-level2"
                                             class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm">
                                     </div>
                                     <div class="col-span-6 sm:col-span-3 lg:col-span-2">
-                                        <label for="Linfocitos" class="block text-sm font-medium text-gray-700">Linfocitos <!--Tipo: Float -->
+                                        <label for="linfocitos" class="block text-sm font-medium text-gray-700">Linfocitos <!--Tipo: Float -->
                                         <span>(%)</span></label>
-                                        <input type="text" name="region" id="region" autocomplete="address-level1"
+                                        <input type="text" name="linfocitos" id="linfocitos" autocomplete="address-level1"
                                             class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm">
                                     </div>
                                     <div class="col-span-6 sm:col-span-3 lg:col-span-2">
-                                        <label for="Eosinófilos" class="block text-sm font-medium text-gray-700">Eosinófilos <!--Tipo: Float -->
+                                        <label for="eosinofilos" class="block text-sm font-medium text-gray-700">Eosinófilos <!--Tipo: Float -->
                                         <span>(%)</span></label>
-                                        <input type="text" name="postal-code" id="postal-code"
+                                        <input type="text" name="eosinofilos" id="eosinofilos"
                                             autocomplete="postal-code"
                                             class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm">
                                     </div>
                                     <div class="col-span-6 sm:col-span-6 lg:col-span-2">
-                                        <label for="Monocitos" class="block text-sm font-medium text-gray-700">Monocitos <!--Tipo: Float -->
+                                        <label for="monocitos" class="block text-sm font-medium text-gray-700">Monocitos <!--Tipo: Float -->
                                          <span>(%)</span></label>
-                                        <input type="text" name="city" id="city" autocomplete="address-level2"
+                                        <input type="text" name="monocitos" id="monocitos" autocomplete="address-level2"
                                             class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm">
                                     </div>
                                     <div class="col-span-6 sm:col-span-3 lg:col-span-2">
-                                        <label for="Basófilos" class="block text-sm font-medium text-gray-700">Basófilos <!--Tipo: Float -->
+                                        <label for="basofilos" class="block text-sm font-medium text-gray-700">Basófilos <!--Tipo: Float -->
                                         <span>(%)</span></label>
-                                        <input type="text" name="region" id="region" autocomplete="address-level1"
+                                        <input type="text" name="basofilos" id="basofilos" autocomplete="address-level1"
                                             class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm">
                                     </div>
                                     <div class="col-span-6 sm:col-span-3 lg:col-span-2">
-                                        <label for="Frotis" class="block text-sm font-medium text-gray-700">Frotis <!--Tipo: Varchar -->
+                                        <label for="frotis" class="block text-sm font-medium text-gray-700">Frotis <!--Tipo: Varchar -->
                                         </label>
-                                        <input type="text" name="postal-code" id="postal-code"
+                                        <input type="text" name="frotis" id="frotis"
                                             autocomplete="postal-code"
                                             class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm">
                                     </div>

@@ -13,26 +13,18 @@
                         <div class="overflow-hidden shadow sm:rounded-md">
                             <div class="bg-white px-4 py-5 sm:p-6">
                                 <div class="grid grid-cols-6 gap-6">
-
                                     <div class="col-span-6 sm:col-span-3">
-                                        <label for="Nombre" class="block text-sm font-medium text-gray-700">Nombre
+                                        <label for="ci" class="block text-sm font-medium text-gray-700">Cédula
                                         </label>
-                                        <input type="text" name="first-name" id="first-name" autocomplete="given-name"
-                                            class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm">
-                                    </div>
-
-                                    <div class="col-span-6 sm:col-span-3">
-                                        <label for="Cédula" class="block text-sm font-medium text-gray-700">Cédula
-                                        </label>
-                                        <input type="text" name="last-name" id="last-name" autocomplete="family-name"
+                                        <input type="text" name="ci" id="ci" autocomplete="family-name"
                                             class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm">
                                     </div>
 
                                     <!-- Primer INput -->
                                     <div class="col-span-6 sm:col-span-6 lg:col-span-2">
-                                        <label for="Resultado Prueba de Embarazo" class="block text-sm font-medium text-gray-700">Resultado Prueba de Embarazo <!--Tipo: Varchar -->
+                                        <label for="resultado_prueba_de_embarazo" class="block text-sm font-medium text-gray-700">Resultado Prueba de Embarazo <!--Tipo: Varchar -->
                                         </label>
-                                        <input type="text" name="city" id="city" autocomplete="address-level2"
+                                        <input type="text" name="resultado_prueba_de_embarazo" id="resultado_prueba_de_embarazo" autocomplete="address-level2"
                                             class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm">
                                     </div>
                                 </div>
