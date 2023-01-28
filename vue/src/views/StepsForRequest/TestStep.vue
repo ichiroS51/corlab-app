@@ -89,8 +89,6 @@
                                         </div>
                                     </div>
 
-                                    <div>{{ clientTests.tests }}</div>
-
                                     <div class="col-span-6 sm:col-span-6">
                                         <label for="country" class="block text-sm font-medium text-gray-700">Metodos de
                                             Pago</label>
@@ -103,15 +101,6 @@
                                             </option>
                                         </select>
                                     </div>
-                                    <!-- <div>Methods Tests: {{ clientTests.method }}</div> -->
-
-                                    <!-- <div class="col-span-6 sm:col-span-3 lg:col-span-2">
-                                        <label for="region" class="block text-sm font-medium text-gray-700">Nº
-                                            de
-                                            Factura</label>
-                                            <input type="text" name="region" id="region" autocomplete="address-level1"
-                                            class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm" />
-                                        </div> -->
                                 </div>
                             </div>
                             <div class="bg-gray-50 px-4 py-3 text-right sm:px-6">

@@ -18,6 +18,7 @@ return new class extends Migration
             $table->string('result_path')->nullable();
             $table->integer('pay_number')->nullable();
             $table->integer('total_pay')->nullable();
+            $table->string('status')->nullable();
             # relationships one to many with clients table
             $table->unsignedBigInteger('user_ci')->nullable();
             $table->foreign('user_ci')

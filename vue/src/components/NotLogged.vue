@@ -33,8 +33,8 @@
                         </button>
                     </div>
                     <div class="hidden lg:flex lg:min-w-0 lg:flex-1 lg:justify-center lg:gap-x-12">
-                        <a v-for="item in navigation" :key="item.name" :href="item.href"
-                            class="font-semibold text-gray-900 hover:text-gray-900">{{ item.name }}</a>
+                        <router-link v-for="item in navigation" :key="item.name" :to="item.to"
+                            class="font-semibold text-gray-900 hover:text-gray-900">{{ item.name }}</router-link>
                     </div>
                     <div class="hidden lg:flex lg:min-w-0 lg:flex-1 lg:justify-end">
                         <router-link :to="{ name: 'Login' }"
@@ -65,10 +65,11 @@
                             <div class="-my-6 divide-y divide-gray-500/10">
                                 <div class="space-y-2 py-6">
                                     <a v-for="item in navigation" :key="item.name" :href="item.href"
-                                        class="-mx-3 block rounded-lg py-2 px-3 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-400/10">{{item.name}}</a>
+                                        class="-mx-3 block rounded-lg py-2 px-3 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-400/10">{{ item.name }}</a>
                                 </div>
                                 <div class="py-6">
-                                    <router-link :to="{name: 'Login'}" class="-mx-3 block rounded-lg py-2.5 px-3 text-base font-semibold leading-6 text-gray-900 hover:bg-gray-400/10">Login</router-link>
+                                    <router-link :to="{ name: 'Login' }"
+                                        class="-mx-3 block rounded-lg py-2.5 px-3 text-base font-semibold leading-6 text-gray-900 hover:bg-gray-400/10">Login</router-link>
                                 </div>
                             </div>
                         </div>
@@ -88,10 +89,10 @@ import { Dialog, DialogPanel } from '@headlessui/vue'
 import { Bars3Icon, XMarkIcon } from '@heroicons/vue/24/outline'
 
 const navigation = [
-    { name: 'Inicio', href: '/' },
-    { name: 'Nosotros', href: '/landing' },
-    { name: 'Pruebas', href: '#' },
-    { name: 'Solicitar', href: '#' },
+    { name: 'Inicio', to: { name: "Notlog" } },
+    { name: 'Nosotros', to: { name: "Notlog" } },
+    { name: 'Pruebas', to: { name: "Notlog" } },
+    { name: 'Solicitar', to: { name: "Notlog" } },
 ]
 
 const mobileMenuOpen = ref(false)

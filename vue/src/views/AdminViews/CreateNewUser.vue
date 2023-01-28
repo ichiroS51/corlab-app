@@ -32,10 +32,10 @@
                 </div>
 
                 <div>
-                    <label for="password" class="text-sm font-medium">Nombre de Usuario</label>
+                    <label for="username" class="text-sm font-medium">Nombre de Usuario</label>
 
                     <div class="relative mt-1">
-                        <input type="text" id="password"
+                        <input type="text" id="username"
                             class="w-full rounded-lg border-gray-200 p-4 pr-12 text-sm shadow-sm"
                             placeholder="Ingresar Nombre de Usuario" />
 
@@ -53,7 +53,6 @@
 
                 <div>
                     <label for="password" class="text-sm font-medium">Contraseña</label>
-
                     <div class="relative mt-1">
                         <input type="password" id="password"
                             class="w-full rounded-lg border-gray-200 p-4 pr-12 text-sm shadow-sm"

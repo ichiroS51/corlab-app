@@ -82,13 +82,15 @@
                                 <div>
                                     <label class="sr-only" for="email">Correo</label>
                                     <input class="w-full rounded-lg border-gray-200 p-3 text-sm"
-                                        placeholder="Email address" type="email" id="Correo Electrònico" readonly :value="user_email"  />
+                                        placeholder="Email address" type="email" id="Correo Electrònico" readonly
+                                        :value="user_email" />
                                 </div>
 
                                 <div>
                                     <label class="sr-only" for="phone">Telèfono</label>
                                     <input class="w-full rounded-lg border-gray-200 p-3 text-sm"
-                                        placeholder="Phone Number" type="tel" id="Telèfono" readonly :value="user_phone" />
+                                        placeholder="Phone Number" type="tel" id="Telèfono" readonly
+                                        :value="user_phone" />
                                 </div>
                             </div>
 
@@ -96,8 +98,9 @@
                                 <label for="region" class="sr-only block text-sm font-medium text-gray-700">Nº
                                     de
                                     Comprobante</label>
-                                <input v-model="pay_number" type="text" name="region" id="region" autocomplete="address-level1"
-                                    class="w-full rounded-lg border-gray-200 p-3 text-sm" placeholder="Nùmero de Comprobante"/>
+                                <input v-model="pay_number" type="text" name="region" id="region"
+                                    autocomplete="address-level1" class="w-full rounded-lg border-gray-200 p-3 text-sm"
+                                    placeholder="Nùmero de Comprobante" />
                             </div>
 
                             <div class="mt-4">
@@ -144,10 +147,8 @@ export default {
             this.$store
                 .dispatch('pay', this.pay_number)
                 .then((res) => {
-                    // this.$router.push({
-                    //     name: 'Pay'
-                    // });
-                    console.log('Request Test Successfully')
+                    this.finishProcess();
+                    console.log('Request Test Successfully');
                 })
                 .catch((error) => {
                     this.$loading.value = false;
@@ -155,6 +156,15 @@ export default {
                         errors.value = error.response.data.errors;
                     }
                 });
+        },
+
+        finishProcess() {
+            this.$swal.fire({
+                icon: 'success',
+                title: 'Solicitud Realizada con exito!',
+                text: 'Recuerde dirigirse al laboratorio para realizarce los estudios solicitados',
+                footer: '<a href="/">Regresar al inicio?</a>'
+            })
         },
     }
 }
