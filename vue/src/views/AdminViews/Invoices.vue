@@ -14,6 +14,32 @@
                 </svg>
                 Cargando Contenido...
             </div>
+            <div v-if="showSuccessMessage"
+                class="alert bg-green-100 rounded-lg py-5 px-6 mb-3 text-base text-green-700 inline-flex items-center w-full alert-dismissible fade show"
+                role="alert">
+                <strong class="mr-1">Estado </strong> confirmado correctamente! Por favor recargue el sitio para actualizar los datos.
+                <button @click="hideMessages" type="button"
+                    class="btn-close box-content w-6 h-6 p-1 ml-auto text-yellow-900 border-none rounded-none opacity-50 focus:shadow-none focus:outline-none focus:opacity-100 hover:text-yellow-900 hover:opacity-75 hover:no-underline"
+                    data-bs-dismiss="alert" aria-label="Close">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5}
+                        stroke="currentColor" className="w-6 h-6">
+                        <path strokeLinecap="round" strokeLinejoin="round" d="M6 18L18 6M6 6l12 12" />
+                    </svg>
+                </button>
+            </div>
+            <div v-if="showErrorMessage"
+                class="alert bg-red-100 rounded-lg py-5 px-6 mb-3 text-base text-red-700 inline-flex items-center w-full alert-dismissible fade show"
+                role="alert">
+                <strong class="mr-1">Error </strong> , datos invalidos!
+                <button @click="hideMessages" type="button"
+                    class="btn-close box-content w-6 h-6 p-1 ml-auto text-yellow-900 border-none rounded-none opacity-50 focus:shadow-none focus:outline-none focus:opacity-100 hover:text-yellow-900 hover:opacity-75 hover:no-underline"
+                    data-bs-dismiss="alert" aria-label="Close">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5}
+                        stroke="currentColor" className="w-6 h-6">
+                        <path strokeLinecap="round" strokeLinejoin="round" d="M6 18L18 6M6 6l12 12" />
+                    </svg>
+                </button>
+            </div>
             <div v-if="dataIsEmpty" class="bg-yellow-100 rounded-lg py-5 px-6 mb-4 text-base text-yellow-700 mb-3"
                 role="alert">
                 No hay registros de Facturas
@@ -48,7 +74,8 @@
                                 <span v-else-if="item.status === 'SI'"
                                     class="text-xs inline-block py-1 px-2.5 leading-none text-center whitespace-nowrap align-baseline font-bold bg-green-500 text-white rounded">Confirmado</span>
                                 <span v-else-if="item.status === 'NO'"
-                                    class="text-xs inline-block py-1 px-2.5 leading-none text-center whitespace-nowrap align-baseline font-bold bg-red-600 text-white rounded">No Confirmado</span>
+                                    class="text-xs inline-block py-1 px-2.5 leading-none text-center whitespace-nowrap align-baseline font-bold bg-red-600 text-white rounded">No
+                                    Confirmado</span>
                             </td>
                             <td class="p-3">
                                 <p>{{ item.user_ci }}</p>
@@ -136,38 +163,63 @@
     </div>
 </template>
 
-<script setup>
+<script>
 import { computed } from "vue";
 import { useStore } from "vuex";
+import { ref } from "vue";
 
-const store = useStore();
+export default {
+    setup() {
+        const store = useStore();
 
-const loading = computed(() => store.state.dashboard.loading);
-const data = computed(() => store.state.dashboard.data.invoices);
-const dataIsEmpty = computed(() => store.state.dashboard.isEmpty);
+        return {
+            showSuccessMessage: ref(false),
+            showErrorMessage: ref(false),
+            invoiceEdit: {
+                ci: '',
+                status: '',
+            },
+            dataIsEmpty: computed(() => store.state.dashboard.isEmpty),
+            loading: computed(() => store.state.dashboard.loading),
+            data: computed(() => store.state.dashboard.data.invoices),
+        }
+    },
 
-const invoiceEdit = {
-    ci: '',
-    status: '',
-}
+    methods: {
+        toEdit(obj) {
+            this.invoiceEdit.ci = obj.ci;
+            if (obj.status === null) {
+                this.invoiceEdit.status = '';
+            }
+        },
 
-function toEdit(obj) {
-    invoiceEdit.ci = obj.ci;
-    if (obj.status === null) {
-        invoiceEdit.status = '';
+        edit(ev) {
+            ev.preventDefault();
+            this.$store
+                .dispatch('dashboardInvoicesStatusEdit', this.invoiceEdit)
+                .then((res) => {
+                    console.log("Edit status successfully");
+                    this.showSuccessMessage = true;
+                    this.$forceUpdate();
+                    console.log(res);
+                })
+                .catch((err) => {
+                    console.log(err);
+                    this.showErrorMessage = true;
+                });
+        },
+
+        hideMessages(ev) {
+            this.showSuccessMessage = false;
+            this.showErrorMessage = false;
+        },
+    },
+
+    mounted() {
+        console.log(`the component is now mounted.`)
+        this.$store.dispatch('dashboardInvoicesData');
     }
 }
 
-function edit(ev) {
-    ev.preventDefault();
-    store
-        .dispatch('dashboardInvoicesStatusEdit', invoiceEdit)
-        .then((res) => {
-            console.log("Edit status successfully");
-            console.log(res);
-        })
-        .catch((err) => console.log(err));
-}
 
-store.dispatch('dashboardInvoicesData');
 </script>

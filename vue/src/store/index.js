@@ -184,7 +184,7 @@ const store = createStore({
     mutations: {
         logout: (state) => {
             state.user.token = null;
-            sessionStorage().removeItem('TOKEN');
+            sessionStorage.removeItem('TOKEN');
         },
         setUser: (state, userData) => {
             state.user.token = userData.token;

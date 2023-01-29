@@ -2,6 +2,33 @@
     <div class="container flex flex-col justify-center p-6 mx-auto">
         <div class="container p-2 mx-auto sm:p-4 dark:text-gray-800">
             <h2 class="mb-4 text-2xl font-bold leading-tight">Administrar Examenes</h2>
+            <div v-if="showSuccessMessage"
+                class="alert bg-green-100 rounded-lg py-5 px-6 mb-3 text-base text-green-700 inline-flex items-center w-full alert-dismissible fade show"
+                role="alert">
+                <strong class="mr-1">Precio </strong> editado correctamente! Por favor recargue el sitio para
+                actualizar los datos.
+                <button @click="hideMessages" type="button"
+                    class="btn-close box-content w-6 h-6 p-1 ml-auto text-yellow-900 border-none rounded-none opacity-50 focus:shadow-none focus:outline-none focus:opacity-100 hover:text-yellow-900 hover:opacity-75 hover:no-underline"
+                    data-bs-dismiss="alert" aria-label="Close">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5}
+                        stroke="currentColor" className="w-6 h-6">
+                        <path strokeLinecap="round" strokeLinejoin="round" d="M6 18L18 6M6 6l12 12" />
+                    </svg>
+                </button>
+            </div>
+            <div v-if="showErrorMessage"
+                class="alert bg-red-100 rounded-lg py-5 px-6 mb-3 text-base text-red-700 inline-flex items-center w-full alert-dismissible fade show"
+                role="alert">
+                <strong class="mr-1">Error </strong> , datos invalidos!
+                <button @click="hideMessages" type="button"
+                    class="btn-close box-content w-6 h-6 p-1 ml-auto text-yellow-900 border-none rounded-none opacity-50 focus:shadow-none focus:outline-none focus:opacity-100 hover:text-yellow-900 hover:opacity-75 hover:no-underline"
+                    data-bs-dismiss="alert" aria-label="Close">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5}
+                        stroke="currentColor" className="w-6 h-6">
+                        <path strokeLinecap="round" strokeLinejoin="round" d="M6 18L18 6M6 6l12 12" />
+                    </svg>
+                </button>
+            </div>
             <div class="overflow-x-auto">
                 <table class="min-w-full text-xs text-center">
                     <thead class="">
@@ -52,10 +79,10 @@
             </div>
             <br>
             <div class="hidden sm:block" aria-hidden="true">
-                    <div class="py-5">
-                        <div class="border-t border-gray-200"></div>
-                    </div>
+                <div class="py-5">
+                    <div class="border-t border-gray-200"></div>
                 </div>
+            </div>
             <div>
                 <div class="md:grid md:grid-cols-3 md:gap-6">
                     <div class="md:col-span-1">
@@ -112,43 +139,57 @@
     </div>
 </template>
 
-<script setup>
+<script>
 import { computed } from "vue";
 import { useStore } from "vuex";
 import { useRouter } from 'vue-router';
+import { ref } from "vue";
 
-const router = useRouter();
-const store = useStore();
-let viewFormEdit = false;
+export default {
+    setup() {
+        const router = useRouter();
+        const store = useStore();
+        let viewFormEdit = false;
+        return {
+            showSuccessMessage: ref(false),
+            showErrorMessage: ref(false),
+            loading: computed(() => store.state.dashboard.loading),
+            data: computed(() => store.state.dashboard.data.tests),
+            data2: computed(() => store.state.dashboard.data.catalogs),
+            dataIsEmpty: computed(() => store.state.dashboard.isEmpty),
+            updateTest: {
+                id: '',
+                price: '',
+                name: '',
+            },
+        }
+    },
+    methods: {
+        toUpdate(obj) {
+            this.updateTest.id = obj.id;
+            this.updateTest.price = obj.price;
+            this.updateTest.name = obj.name;
+        },
 
-const loading = computed(() => store.state.dashboard.loading);
-const data = computed(() => store.state.dashboard.data.tests);
-const data2 = computed(() => store.state.dashboard.data.catalogs);
-const dataIsEmpty = computed(() => store.state.dashboard.isEmpty);
-
-const updateTest = {
-    id: '',
-    price: '',
-    name: '',
+        editPrice(ev) {
+            ev.preventDefault();
+            this.$store
+                .dispatch('dashboardTestsEdit', this.updateTest)
+                .then((res) => {
+                    this.showSuccessMessage = true
+                    this.$router.push({
+                        name: 'EditTests',
+                    })
+                })
+                .catch((err) => {
+                    console.log(err);
+                    this.showErrorMessage = true;
+                });
+        },
+    },
+    mounted() {
+        console.log('Component is mounted');
+        this.$store.dispatch('dashboardTestsData');
+    }
 }
-
-function toUpdate(obj) {
-    updateTest.id = obj.id;
-    updateTest.price = obj.price;
-    updateTest.name = obj.name;
-}
-
-function editPrice(ev) {
-    ev.preventDefault();
-    store
-        .dispatch('dashboardTestsEdit', updateTest)
-        .then((res) => {
-            router.push({
-                name: 'EditTests',
-            })
-        });
-}
-
-
-store.dispatch('dashboardTestsData');
 </script>
