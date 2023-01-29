@@ -31,7 +31,14 @@ const store = createStore({
             invoice: {
                 ci: 0,
                 status: '',
-            }
+            },
+            create_user: {
+                ci: 0,
+                name: '',
+                password: '',
+                admin_id: 1,
+            },
+            users: {},
         },
     },
     getters: {
@@ -66,7 +73,7 @@ const store = createStore({
                     // console.log(data.admin_id)
                     commit('setUser', data);
                 })
-                // .catch((err) => console.log(err));
+            // .catch((err) => console.log(err));
         },
         logout({ commit }) {
             return axiosClient.post('/logout')
@@ -150,6 +157,29 @@ const store = createStore({
                     console.log(res);
                 });
         },
+
+        dashboardUserCreate({ commit }, user) {
+            commit('setDashboardUserCreate', user);
+
+            return axiosClient.post('create-user', this.state.dashboard.create_user)
+                .then((res) => {
+                    // console.log(res);
+                    console.log("OK");
+                })
+                .catch((err) => console.log(err));
+        },
+
+        dashboardGetUserData({ commit }) {
+            commit('setDashboardLoading', true);
+            return axiosClient('show-users')
+                .then((res) => {
+                    commit('setDashboardLoading', false);
+                    commit('getDashUser', res.data);
+                    // console.log(res);
+                    console.log('OK')
+                })
+                .catch((err) => console.log(err));
+        }
     },
     mutations: {
         logout: (state) => {
@@ -216,6 +246,17 @@ const store = createStore({
                 state.dashboard.invoice.status = 'NO';
             }
         },
+
+        setDashboardUserCreate: (state, user) => {
+            state.dashboard.create_user.ci = parseInt(user.ci);
+            state.dashboard.create_user.name = user.name;
+            state.dashboard.create_user.password = user.password;
+        },
+
+        getDashUser: (state, data) => {
+            state.dashboard.users = data;
+            state.dashboard.isEmpty = Object.keys(data.users).length === 0;
+        }
     },
     modules: {},
 })

@@ -6,6 +6,7 @@ use App\Http\Controllers\AuthController;
 use App\Http\Controllers\ClientController;
 use App\Http\Controllers\InvoiceController;
 use App\Http\Controllers\AdminControllers\AdminTestsController;
+use App\Http\Controllers\AdminControllers\AdminUsersController;
 use App\Http\Controllers\AdminControllers\AdminInvoiceController;
 
 /*
@@ -33,6 +34,8 @@ Route::get('/invoices', [AdminInvoiceController::class, 'index']);
 Route::post('/edit-invoice', [AdminInvoiceController::class, 'edit']);
 Route::get('/tests', [AdminTestsController::class, 'index']);
 Route::post('/edit', [AdminTestsController::class, 'edit']);
+Route::post('/create-user', [AdminUsersController::class, 'create']);
+Route::get('/show-users', [AdminUsersController::class, 'show']);
 
 // Auths
 Route::post('/login', [AuthController::class, 'login']);

@@ -1,5 +1,4 @@
 <template>
-
     <div class="mx-auto px-4 py-16 sm:px-6 lg:px-8">
         <div class="mx-auto max-w-lg">
             <h1 class="text-center text-2xl font-bold text-indigo-600 sm:text-3xl">
@@ -7,66 +6,63 @@
             </h1>
 
             <p class="mx-auto mt-4 max-w-md text-center text-gray-500">
-                En los siguientes campos insertaras la informaciòn necesaria para poder crear un usuario para un un cliente especìfico dentro de la aplicaciòn
+                En los siguientes campos insertaras la informaciòn necesaria para poder crear un usuario para un un
+                cliente especìfico dentro de la aplicaciòn
             </p>
 
-            <form action="" class="mt-6 mb-0 space-y-4 rounded-lg p-8 shadow-2xl">
+            <div v-if="showSuccessMessage" class="alert bg-green-100 rounded-lg py-5 px-6 mb-3 text-base text-green-700 inline-flex items-center w-full alert-dismissible fade show"
+                role="alert">
+                <strong class="mr-1">Usuario </strong> creado correctamente!
+                <button @click="hideMessages" type="button"
+                    class="btn-close box-content w-6 h-6 p-1 ml-auto text-yellow-900 border-none rounded-none opacity-50 focus:shadow-none focus:outline-none focus:opacity-100 hover:text-yellow-900 hover:opacity-75 hover:no-underline"
+                    data-bs-dismiss="alert" aria-label="Close">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5}
+                        stroke="currentColor" className="w-6 h-6">
+                        <path strokeLinecap="round" strokeLinejoin="round" d="M6 18L18 6M6 6l12 12" />
+                    </svg>
+                </button>
+            </div>
+
+            <div v-if="showErrorMessage" class="alert bg-red-100 rounded-lg py-5 px-6 mb-3 text-base text-red-700 inline-flex items-center w-full alert-dismissible fade show"
+                role="alert">
+                <strong class="mr-1">Error </strong> , datos invalidos!
+                <button @click="hideMessages" type="button"
+                    class="btn-close box-content w-6 h-6 p-1 ml-auto text-yellow-900 border-none rounded-none opacity-50 focus:shadow-none focus:outline-none focus:opacity-100 hover:text-yellow-900 hover:opacity-75 hover:no-underline"
+                    data-bs-dismiss="alert" aria-label="Close">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5}
+                        stroke="currentColor" className="w-6 h-6">
+                        <path strokeLinecap="round" strokeLinejoin="round" d="M6 18L18 6M6 6l12 12" />
+                    </svg>
+                </button>
+            </div>
+
+            <form @submit="createUser" class="mt-6 mb-0 space-y-4 rounded-lg p-8 shadow-2xl">
                 <p class="text-lg font-medium">Ingrese los Datos</p>
 
                 <div>
-                    <label for="email" class="text-sm font-medium">Cèdula del Usuario</label>
-
+                    <label for="ci" class="text-sm font-medium">Cèdula del Usuario</label>
                     <div class="relative mt-1">
-                        <input type="text" id="email"
+                        <input type="text" id="ci" name="ci" v-model="user.ci"
                             class="w-full rounded-lg border-gray-200 p-4 pr-12 text-sm shadow-sm"
-                            placeholder="Ingresar Cèdula" />
-
-                        <span class="absolute inset-y-0 right-4 inline-flex items-center">
-                            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-gray-400" fill="none"
-                                viewBox="0 0 24 24" stroke="currentColor">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                    d="M16 12a4 4 0 10-8 0 4 4 0 008 0zm0 0v1.5a2.5 2.5 0 005 0V12a9 9 0 10-9 9m4.5-1.206a8.959 8.959 0 01-4.5 1.207" />
-                            </svg>
-                        </span>
+                            placeholder="Ingresar CI" />
                     </div>
                 </div>
 
                 <div>
                     <label for="username" class="text-sm font-medium">Nombre de Usuario</label>
-
                     <div class="relative mt-1">
-                        <input type="text" id="username"
+                        <input type="text" id="username" name="username" v-model="user.name"
                             class="w-full rounded-lg border-gray-200 p-4 pr-12 text-sm shadow-sm"
                             placeholder="Ingresar Nombre de Usuario" />
-
-                        <span class="absolute inset-y-0 right-4 inline-flex items-center">
-                            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-gray-400" fill="none"
-                                viewBox="0 0 24 24" stroke="currentColor">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                    d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                    d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z" />
-                            </svg>
-                        </span>
                     </div>
                 </div>
 
                 <div>
                     <label for="password" class="text-sm font-medium">Contraseña</label>
                     <div class="relative mt-1">
-                        <input type="password" id="password"
+                        <input type="password" id="password" v-model="user.password"
                             class="w-full rounded-lg border-gray-200 p-4 pr-12 text-sm shadow-sm"
                             placeholder="Contraseña" />
-
-                        <span class="absolute inset-y-0 right-4 inline-flex items-center">
-                            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-gray-400" fill="none"
-                                viewBox="0 0 24 24" stroke="currentColor">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                    d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                    d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z" />
-                            </svg>
-                        </span>
                     </div>
                 </div>
 
@@ -74,12 +70,56 @@
                     class="block w-full rounded-lg bg-indigo-600 px-5 py-3 text-sm font-medium text-white">
                     Crear Usuario
                 </button>
-                <!-- <p class="text-center text-sm text-gray-500">
-                    No account?
-                    <a class="underline" href="">Sign up</a>
-                </p> -->
             </form>
         </div>
     </div>
 
 </template>
+
+<script>
+import store from "../../store";
+import { useRouter } from 'vue-router';
+import { useStore } from "vuex";
+import { ref } from "vue";
+
+export default {
+    setup() {
+        const router = useRouter();
+        const theStore = useStore();
+        let loading = ref(false);
+
+        return {
+            showSuccessMessage: ref(false),
+            showErrorMessage: ref(false),
+            user: {
+                ci: '',
+                name: '',
+                password: '',
+            }
+        }
+    },
+
+    methods: {
+        createUser(ev) {
+            ev.preventDefault();
+
+            store
+                .dispatch('dashboardUserCreate', this.user)
+                .then((res) => {
+                    console.log(res);
+                    this.showSuccessMessage = true;
+                })
+                .catch((err) => {
+                    console.log(err);
+                    this.showErrorMessage = true;
+                })
+        },
+
+        hideMessages(ev) {
+            this.showSuccessMessage = false;
+            this.showErrorMessage = false;
+        },
+    },
+}
+
+</script>

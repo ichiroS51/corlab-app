@@ -22,6 +22,7 @@ import PerfilEnzimatico from '../views/TestsForms/PerfilEnzimatico.vue';
 import CoproAnalisis from '../views/TestsForms/CoproAnalisis.vue';
 import UroAnalisis from '../views/TestsForms/UroAnalisis.vue';
 import PruebaDeEmbarazo from '../views/TestsForms/PruebaEmbarazo.vue';
+import AdminResultsTests from '../views/AdminViews/AdminResultsTests.vue';
 
 const router = createRouter({
     history: createWebHistory(),
@@ -122,8 +123,14 @@ const router = createRouter({
                     name: 'PruebaDeEmbarazo',
                     component: PruebaDeEmbarazo,
                 },
+
             ],
 
+        },
+        {
+            path: '/dashboard/tests/result',
+            name: 'AdminResults',
+            component: AdminResultsTests,
         },
         {
             path: '/',
