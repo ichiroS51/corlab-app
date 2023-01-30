@@ -19,6 +19,7 @@ const store = createStore({
 
         admin: {
             admin_token: '13495912374Abdmn&&&%$',
+            email: 'corlab@mail.com',
         },
 
         users: {
@@ -74,14 +75,26 @@ const store = createStore({
     actions: {
         // Auth
         login({ commit }, user) {
-            return axiosClient.post('/login', user)
-                .then(({ data }) => {
-                    console.log(data)
-                    console.log(data.token);
-                    // console.log(data.admin_id)
-                    commit('setUser', data);
-                })
-            .catch((err) => console.log(err));
+            console.log(user.email);
+            if (user.email === this.state.admin.email) {
+                return axiosClient.post('/admin-login', user)
+                    .then(({ data }) => {
+                        console.log(data)
+                        console.log(data.token);
+                        // console.log(data.admin_id)
+                        commit('setUser', data);
+                    })
+                .catch((err) => console.log(err));
+            } else {
+                return axiosClient.post('/login', user)
+                    .then(({ data }) => {
+                        console.log(data)
+                        console.log(data.token);
+                        // console.log(data.admin_id)
+                        commit('setUser', data);
+                    })
+                .catch((err) => console.log(err));
+            }
         },
         logout({ commit }) {
             return axiosClient.post('/logout')

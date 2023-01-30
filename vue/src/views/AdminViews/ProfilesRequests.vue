@@ -37,6 +37,7 @@
                             <th class="p-3">ID del Perfil</th>
                             <th class="p-3">CI del Cliente</th>
                             <th class="p-3">Evaluar</th>
+                            <th class="p-3">Subir Resultados</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -60,7 +61,7 @@
                                 <!-- <p>V-{{ item.client_id }}</p> -->
                             </td>
                             <td class="p-3 text-right text-blue-700">
-                                <a @click.prevent="goToResults(item.profile_id)" href="#!"
+                                <a @click.prevent="goToResults(item.profile_id)"
                                     class="text-blue-600 hover:text-blue-700 transition duration-300 ease-in-out mb-4">
                                     <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
                                         stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
@@ -68,6 +69,17 @@
                                             d="M16.862 4.487l1.687-1.688a1.875 1.875 0 112.652 2.652L10.582 16.07a4.5 4.5 0 01-1.897 1.13L6 18l.8-2.685a4.5 4.5 0 011.13-1.897l8.932-8.931zm0 0L19.5 7.125M18 14v4.75A2.25 2.25 0 0115.75 21H5.25A2.25 2.25 0 013 18.75V8.25A2.25 2.25 0 015.25 6H10" />
                                     </svg>
                                 </a>
+                            </td>
+                            <td class="p-3 text-right text-blue-700">
+                                <router-link :to="{ name: 'DashError' }"
+                                    class="text-blue-600 hover:text-blue-700 transition duration-300 ease-in-out mb-4">
+                                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                                        stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+                                        <path stroke-linecap="round" stroke-linejoin="round"
+                                            d="M3 16.5v2.25A2.25 2.25 0 005.25 21h13.5A2.25 2.25 0 0021 18.75V16.5m-13.5-9L12 3m0 0l4.5 4.5M12 3v13.5" />
+                                    </svg>
+
+                                </router-link>
                             </td>
                         </tr>
                     </tbody>

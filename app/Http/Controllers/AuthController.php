@@ -14,36 +14,36 @@ class AuthController extends Controller
 
     public function login(Request $request)
     {
-        if ($request->input('email') == $this->adminEmail) {
-            $credentials = $request->validate([
-                'email' => ['required', 'email:rfc,dns', 'exists:administrators,email'],
-                'password' => ['required'],
-            ]);
-        } else {
-            $credentials = $request->validate([
-                'email' => ['required', 'email:rfc,dns', 'exists:clients,email'],
-                'password' => ['required'],
-            ]);
-        }
+        $credentials = $request->validate([
+            'email' => ['required'],
+            'password' => ['required'],
+        ]);
 
-        if ($credentials['email'] == $this->adminEmail) {
-            if (Auth::guard('admin')->attempt($credentials)) {
-                return response([
-                    'token' => $this->adminToken,
-                    'admin_id' => $this->adminID,
-                ]);
-            }
-        } else {
-            if (Auth::guard('client')->attempt($credentials)) {
-                return response([
-                    'token' => '98000012324Abdmn&&&%$',
-                ]);
-            }
+        if (Auth::guard('client')->attempt($credentials)) {
+            return response([
+                'token' => '98000012324Abdmn&&&%$',
+            ]);
         }
 
         return response([
             'token' => '98000012324Abdmn&&&%$',
         ]);
+
+    }
+
+    public function adminLogin(Request $request)
+    {
+        $credentials = $request->validate([
+            'email' => ['required', 'email:rfc,dns', 'exists:administrators,email'],
+            'password' => ['required'],
+        ]);
+
+        if (Auth::guard('admin')->attempt($credentials)) {
+            return response([
+                'token' => $this->adminToken,
+                'admin_id' => $this->adminID,
+            ]);
+        }
     }
 
     public function logout()

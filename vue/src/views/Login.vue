@@ -39,8 +39,9 @@
 
                 <div class="flex items-center justify-between">
                     <div class="text-sm">
-                        <a href="#" class="font-medium text-indigo-600 hover:text-indigo-500">¿Olvidaste tu
-                            contraseña?</a>
+                        <router-link :to="{ name: 'NotConnNoLog' }" href="#"
+                            class="font-medium text-indigo-600 hover:text-indigo-500">¿Olvidaste tu
+                            contraseña?</router-link>
                     </div>
                 </div>
 

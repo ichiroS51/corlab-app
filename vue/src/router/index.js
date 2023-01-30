@@ -26,6 +26,8 @@ import PruebaDeEmbarazo from '../views/TestsForms/PruebaEmbarazo.vue';
 import AdminResultsTests from '../views/AdminViews/AdminResultsTests.vue';
 import AvailableTests from '../views/AvailableTests.vue';
 import About from '../views/About.vue';
+import UserInvoices from '../views/UserLoggedViews/UserInvoices.vue';
+import Error from '../views/Error.vue';
 
 const router = createRouter({
     history: createWebHistory(),
@@ -63,6 +65,16 @@ const router = createRouter({
                     path: '/about',
                     name: 'AboutLog',
                     component: About,
+                },
+                {
+                    path: '/invoices-requested',
+                    name: 'InvoRe',
+                    component: UserInvoices,
+                },
+                {
+                    path: '/not-connection',
+                    name: 'NotConn',
+                    component: Error,
                 },
             ]
         },
@@ -141,7 +153,11 @@ const router = createRouter({
                     name: 'PruebaDeEmbarazo',
                     component: PruebaDeEmbarazo,
                 },
-
+                {
+                    path: '/not-connection',
+                    name: 'DashError',
+                    component: Error,
+                },
             ],
 
         },
@@ -188,6 +204,11 @@ const router = createRouter({
                     path: '/about',
                     name: 'About',
                     component: About,
+                },
+                {
+                    path: '/not-connection',
+                    name: 'NotConnNoLog',
+                    component: Error,
                 },
             ]
         },

@@ -41,4 +41,5 @@ Route::get('/show-users', [AdminUsersController::class, 'show']);
 
 // Auths
 Route::post('/login', [AuthController::class, 'login']);
+Route::post('/admin-login', [AuthController::class, 'adminLogin']);
 Route::post('/logout', [AuthController::class, 'logout']);

@@ -123,9 +123,10 @@ export default {
 
         return {
             navigation: [
-                { name: 'Inicio', to: { name: "Landing" }, current: true },
-                { name: 'Ver Resultados', to: { name: "Landing" }, current: false },
-                { name: 'Conòcenos', to: { name: "Landing" }, current: false },
+                { name: 'Inicio', to: { name: "Landing" }, current: router.currentRoute.value.name === 'Landing' },
+                { name: 'Ver Resultados', to: { name: "InvoRe" }, current: router.currentRoute.value.name === 'InvoRe' },
+                { name: 'Conòcenos', to: { name: "AboutLog" }, current: router.currentRoute.value.name === 'AboutLog' },
+                { name: 'Pruebas Disponibles', to: { name: "ProfilesLog" }, current: router.currentRoute.value.name === 'ProfilesLog' },
             ],
             user: {
                 name: 'Tom Cook',
