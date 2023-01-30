@@ -90,9 +90,9 @@ import { Bars3Icon, XMarkIcon } from '@heroicons/vue/24/outline'
 
 const navigation = [
     { name: 'Inicio', to: { name: "Notlog" } },
-    { name: 'Nosotros', to: { name: "Notlog" } },
-    { name: 'Pruebas', to: { name: "Notlog" } },
-    { name: 'Solicitar', to: { name: "Notlog" } },
+    { name: 'Nosotros', to: { name: "About" } },
+    { name: 'Pruebas', to: { name: "Profiles" } },
+    { name: 'Solicitar', to: { name: "Info" } },
 ]
 
 const mobileMenuOpen = ref(false)

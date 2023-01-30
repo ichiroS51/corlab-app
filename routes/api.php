@@ -5,6 +5,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\ClientController;
 use App\Http\Controllers\InvoiceController;
+use App\Http\Controllers\ProfilesController;
 use App\Http\Controllers\AdminControllers\AdminTestsController;
 use App\Http\Controllers\AdminControllers\AdminUsersController;
 use App\Http\Controllers\AdminControllers\AdminInvoiceController;
@@ -29,6 +30,7 @@ Route::middleware('auth:sanctum')->group(function () {
 Route::post('/test-info', [ClientController::class, 'storeClient']);
 Route::post('/test-method', [InvoiceController::class, 'geInvoice']);
 Route::post('/test-pay', [InvoiceController::class, 'pay']);
+Route::get('/profiles', [ProfilesController::class, 'index']);
 
 Route::get('/invoices', [AdminInvoiceController::class, 'index']);
 Route::post('/edit-invoice', [AdminInvoiceController::class, 'edit']);

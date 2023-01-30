@@ -23,6 +23,8 @@ import CoproAnalisis from '../views/TestsForms/CoproAnalisis.vue';
 import UroAnalisis from '../views/TestsForms/UroAnalisis.vue';
 import PruebaDeEmbarazo from '../views/TestsForms/PruebaEmbarazo.vue';
 import AdminResultsTests from '../views/AdminViews/AdminResultsTests.vue';
+import AvailableTests from '../views/AvailableTests.vue';
+import About from '../views/About.vue';
 
 const router = createRouter({
     history: createWebHistory(),
@@ -50,6 +52,16 @@ const router = createRouter({
                     path: '/pay',
                     name: 'PayWhenLog',
                     component: PayStep,
+                },
+                {
+                    path: '/available-tests',
+                    name: 'ProfilesLog',
+                    component: AvailableTests,
+                },
+                {
+                    path: '/about',
+                    name: 'AboutLog',
+                    component: About,
                 },
             ]
         },
@@ -160,6 +172,16 @@ const router = createRouter({
                     path: '/pay',
                     name: 'Pay',
                     component: PayStep,
+                },
+                {
+                    path: '/available-tests',
+                    name: 'Profiles',
+                    component: AvailableTests,
+                },
+                {
+                    path: '/about',
+                    name: 'About',
+                    component: About,
                 },
             ]
         },

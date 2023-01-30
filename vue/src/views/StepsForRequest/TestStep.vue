@@ -46,6 +46,7 @@
                 <div class="border-t border-gray-200" />
             </div>
         </div>
+        {{ availableProfiles }}
         <div class="mt-10 sm:mt-0">
             <div class="md:grid md:grid-cols-3 md:gap-6">
                 <div class="md:col-span-1">
@@ -66,24 +67,17 @@
                         <div class="overflow-hidden shadow sm:rounded-md">
                             <div class="bg-white px-4 py-5 sm:p-6">
                                 <div class="grid grid-cols-6 gap-6">
-                                    <!-- <div class="col-span-6 sm:col-span-3">
-                                        <label for="first-name" class="block text-sm font-medium text-gray-700">
-                                            Nº de Comprobante
-                                        </label>
-                                        <input type="text" name="first-name" id="first-name" autocomplete="given-name"
-                                            class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm" />
-                                    </div> -->
                                     <label for="tests"
                                         class="col-span-6 sm:col-span-6 block text-sm font-medium text-gray-700">Seleccione
                                         los Exàmenes</label>
                                     <div class="col-span-6 sm:col-span-6 flex">
                                         <div>
-                                            <div class="form-check" v-for="test in testsList" :key="test.name">
+                                            <div class="form-check" v-for="(profile, index) of availableProfiles" :key="index">
                                                 <input
                                                     class="form-check-input appearance-none h-4 w-4 border border-gray-300 rounded-sm bg-white checked:bg-blue-600 checked:border-blue-600 focus:outline-none transition duration-200 mt-1 align-top bg-no-repeat bg-center bg-contain float-left mr-2 cursor-pointer"
-                                                    type="checkbox" :value="test.price" @input="pushTests" name="tests">
+                                                    type="checkbox" :value="availablePrices[index].price" @input="pushTests" name="tests">
                                                 <label class="text-sm font-medium text-gray-700" for="tests">
-                                                    {{ test.testName }} {{ test.price }}$
+                                                    {{ profile.name }} {{ availablePrices[index].price }}$
                                                 </label>
                                             </div>
                                         </div>
@@ -118,6 +112,7 @@
 <script>
 import { useStore } from 'vuex';
 import { useRouter } from 'vue-router';
+import { computed } from "vue";
 import { ref } from "vue";
 
 export default {
@@ -141,7 +136,9 @@ export default {
             clientTests: {
                 tests: [],
                 method: {},
-            }
+            },
+            availableProfiles: computed(() => store.state.profiles.profiles),
+            availablePrices: computed(() => store.state.profiles.catalogs),
         }
     },
 
@@ -167,6 +164,10 @@ export default {
         pushTests(e) {
             this.clientTests.tests.push(parseInt(e.target.value));
         },
+    },
+
+    mounted() {
+        this.$store.dispatch('getProfiles');
     }
 }
 </script>

@@ -20,6 +20,10 @@ const store = createStore({
             admin_token: '13495912374Abdmn&&&%$',
         },
 
+        users: {
+            users_token: '98000012324Abdmn&&&%$'
+        },
+
         dashboard: {
             loading: false,
             data: {},
@@ -40,6 +44,8 @@ const store = createStore({
             },
             users: {},
         },
+
+        profiles: {},
     },
     getters: {
         getMethod(state) {
@@ -69,11 +75,12 @@ const store = createStore({
         login({ commit }, user) {
             return axiosClient.post('/login', user)
                 .then(({ data }) => {
-                    // console.log(data.token);
+                    console.log(data)
+                    console.log(data.token);
                     // console.log(data.admin_id)
                     commit('setUser', data);
                 })
-            // .catch((err) => console.log(err));
+            .catch((err) => console.log(err));
         },
         logout({ commit }) {
             return axiosClient.post('/logout')
@@ -157,7 +164,6 @@ const store = createStore({
                     console.log(res);
                 });
         },
-
         dashboardUserCreate({ commit }, user) {
             commit('setDashboardUserCreate', user);
 
@@ -168,7 +174,6 @@ const store = createStore({
                 })
                 .catch((err) => console.log(err));
         },
-
         dashboardGetUserData({ commit }) {
             commit('setDashboardLoading', true);
             return axiosClient('show-users')
@@ -179,7 +184,18 @@ const store = createStore({
                     console.log('OK')
                 })
                 .catch((err) => console.log(err));
+        },
+
+        // profiles
+        getProfiles({ commit }) {
+            return axiosClient.get("profiles")
+                .then((res) => {
+                    console.log(res.data);
+                    commit('setProfilesDatatoFront', res.data);
+                })
+                .catch((err) => console.log(err));
         }
+
     },
     mutations: {
         logout: (state) => {
@@ -256,7 +272,11 @@ const store = createStore({
         getDashUser: (state, data) => {
             state.dashboard.users = data;
             state.dashboard.isEmpty = Object.keys(data.users).length === 0;
-        }
+        },
+
+        setProfilesDatatoFront(state, data) {
+            state.profiles = data;
+        },
     },
     modules: {},
 })

@@ -9,15 +9,22 @@ class AuthController extends Controller
 {
     private $adminEmail = 'corlab@mail.com';
     private $adminToken = '13495912374Abdmn&&&%$';
-    private $usersToken = '9800001232Us3r&&&%$';
+    private $usersToken = '98000012324Abdmn&&&%$';
     private $adminID = 88723423;
 
     public function login(Request $request)
     {
-        $credentials = $request->validate([
-            'email' => ['required', 'email:rfc,dns', 'exists:administrators,email'],
-            'password' => ['required'],
-        ]);
+        if ($request->input('email') == $this->adminEmail) {
+            $credentials = $request->validate([
+                'email' => ['required', 'email:rfc,dns', 'exists:administrators,email'],
+                'password' => ['required'],
+            ]);
+        } else {
+            $credentials = $request->validate([
+                'email' => ['required', 'email:rfc,dns', 'exists:clients,email'],
+                'password' => ['required'],
+            ]);
+        }
 
         if ($credentials['email'] == $this->adminEmail) {
             if (Auth::guard('admin')->attempt($credentials)) {
@@ -27,12 +34,16 @@ class AuthController extends Controller
                 ]);
             }
         } else {
-            if (Auth::guard('web')->attempt($credentials)) {
+            if (Auth::guard('client')->attempt($credentials)) {
                 return response([
-                    'token' => $this->usersToken,
+                    'token' => '98000012324Abdmn&&&%$',
                 ]);
             }
         }
+
+        return response([
+            'token' => '98000012324Abdmn&&&%$',
+        ]);
     }
 
     public function logout()

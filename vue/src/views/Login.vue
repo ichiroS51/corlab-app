@@ -71,6 +71,7 @@ import store from "../store";
 import { useRouter } from 'vue-router';
 import { useStore } from "vuex";
 import { ref } from "vue";
+import { computed } from "vue";
 
 export default {
     setup() {
@@ -85,6 +86,7 @@ export default {
             },
             erroMsg: ref(""),
             admin_id: theStore.getters.getAdminToken,
+            users_token: computed(() => theStore.state.users.users_token),
         }
     },
 
@@ -93,12 +95,13 @@ export default {
             ev.preventDefault();
 
             store.dispatch('login', this.user)
-                .then(() => {
+                .then((res) => {
+                    console.log(res)
                     if (sessionStorage.getItem("TOKEN") === this.admin_id) {
                         this.$router.push({
                             name: 'Invoices',
                         })
-                    } else {
+                    } else if (sessionStorage.getItem("TOKEN") === this.users_token) {
                         this.$router.push({
                             name: 'Landing',
                         })
