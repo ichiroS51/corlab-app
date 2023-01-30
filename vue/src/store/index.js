@@ -14,6 +14,7 @@ const store = createStore({
             method: {},
             total_pay: 0,
             pay_number: 0,
+            profilesIds: [],
         },
 
         admin: {
@@ -112,11 +113,13 @@ const store = createStore({
         testSelect({ commit }, clientTests) {
             commit('setTotalPay', clientTests.tests);
             commit('setMethod', clientTests.method);
+            commit('setProfilesIds', clientTests.profilesId);
+            console.log(this.state.user.profilesIds);
             // fetching to backend route api with axios
             return axiosClient.post('/test-method', this.state.user)
-                .then(({ data }) => {
+                .then((res) => {
                     console.log("Total a Pagar: ", this.state.user.total_pay);
-                    return data;
+                    console.log(res.data);
                 })
                 .catch((err) => console.log(err));
         },
@@ -185,6 +188,10 @@ const store = createStore({
                 })
                 .catch((err) => console.log(err));
         },
+        dashboardSetCItoEval({ commit }, user) {
+            commit('setUserCItoResults', user.ci);
+            console.log(this.user.ci);
+        },
 
         // profiles
         getProfiles({ commit }) {
@@ -232,6 +239,11 @@ const store = createStore({
                 state.user.total_pay += prop;
             }
         },
+
+        setProfilesIds: (state, ids) => {
+            state.user.profilesIds = ids;
+        },
+
         setPayNumber(state, number) {
             state.user.pay_number = parseInt(number);
         },
@@ -276,6 +288,10 @@ const store = createStore({
 
         setProfilesDatatoFront(state, data) {
             state.profiles = data;
+        },
+
+        setUserCItoResults(state, ci) {
+            state.user.ci = parseInt(ci);
         },
     },
     modules: {},

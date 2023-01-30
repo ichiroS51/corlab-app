@@ -48,7 +48,7 @@
                                 <p>{{ item.id }}</p>
                             </td>
                             <td class="p-3">
-                                <p>{{ data2[index].price }}</p>
+                                <p>{{ item.price }}</p>
                             </td>
                             <td class="p-3">
                                 {{ item.name }}
@@ -57,7 +57,7 @@
                                 {{ item.updated_at }}
                             </td> -->
                             <td class="p-3 text-right text-blue-700"
-                                @click="toUpdate({ id: item.id, price: data2[index].price, name: item.name, })">
+                                @click="toUpdate({ id: item.id, price: item.price, name: item.name, })">
                                 <a href="#!"
                                     class="text-blue-600 hover:text-blue-700 transition duration-300 ease-in-out mb-4">
                                     <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"

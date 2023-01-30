@@ -14,6 +14,7 @@ import AdminUsers from '../views/AdminViews/AdminUsers.vue';
 import EditInvoices from '../views/AdminViews/EditInvoices.vue';
 import EditTests from '../views/AdminViews/EditTests.vue';
 import Invoices from '../views/AdminViews/Invoices.vue';
+import ProfilesRequests from '../views/AdminViews/ProfilesRequests.vue';
 import PerfilHematologico from '../views/TestsForms/PerfilHematologico.vue';
 import PerfilBioquimico from '../views/TestsForms/PerfilBioquimico.vue';
 import PerfilCoagulación from '../views/TestsForms/PerfilCoagulación.vue';
@@ -84,6 +85,11 @@ const router = createRouter({
                     path: '/dashboard/edit-invoices',
                     name: 'EditInvoices',
                     component: EditInvoices,
+                },
+                {
+                    path: '/dashboard/profiles-requests',
+                    name: 'ProRe',
+                    component: ProfilesRequests,
                 },
                 {
                     path: '/dashboard/invoices',
