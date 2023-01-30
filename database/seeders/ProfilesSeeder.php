@@ -16,28 +16,36 @@ class ProfilesSeeder extends Seeder
     public function run()
     {
         Profile::create([
-            'name' => 'Perfil Hematológico'
+            'name' => 'Perfil Hematológico',
+            'price' => 10,
         ]);
         Profile::create([
-            'name' => 'Perfil Bioquímico'
+            'name' => 'Perfil Bioquímico',
+            'price' => 40,
         ]);
         Profile::create([
-            'name' => 'Perfil Coagulación'
+            'name' => 'Perfil Coagulación',
+            'price' => 12,
         ]);
         Profile::create([
-            'name' => 'Perfil Serológico'
+            'name' => 'Perfil Serológico',
+            'price' => 30,
         ]);
         Profile::create([
-            'name' => 'Perfil Enzimático'
+            'name' => 'Perfil Enzimático',
+            'price' => 20,
         ]);
         Profile::create([
-            'name' => 'Coproanálisis'
+            'name' => 'Coproanálisis',
+            'price' => 5,
         ]);
         Profile::create([
-            'name' => 'Uroanálisis'
+            'name' => 'Uroanálisis',
+            'price' => 5,
         ]);
         Profile::create([
-            'name' => 'Prueba de Embarazo'
+            'name' => 'Prueba de Embarazo',
+            'price' => 10,
         ]);
     }
 }

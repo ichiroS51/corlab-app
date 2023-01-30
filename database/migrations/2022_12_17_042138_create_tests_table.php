@@ -15,13 +15,15 @@ return new class extends Migration
     {
         Schema::create('tests', function (Blueprint $table) {
             $table->id();
-            $table->string('test_name');
-            $table->string('test_type')->nullable();
-            // $table->text('description')->nullable();
+            $table->unsignedBigInteger('profile_id')->nullable();
+            $table->foreign('profile_id')
+                ->references('id')
+                ->on('profiles')
+                ->onDelete('set null');
             # relationships one to many with clients table
             $table->unsignedBigInteger('client_id')->nullable();
             $table->foreign('client_id')
-                ->references('id')
+                ->references('user_ci')
                 ->on('clients')
                 ->onDelete('set null');
             $table->timestamps();

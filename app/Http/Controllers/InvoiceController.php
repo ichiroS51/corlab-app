@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Test;
 use App\Models\Invoice;
 use Illuminate\Http\Request;
 use Illuminate\Http\Response;
@@ -16,15 +17,26 @@ class InvoiceController extends Controller
         $objs = $request->validate([
             'ci' => 'required|integer',
             'total_pay' => 'required|integer',
+            'profilesIds' => 'required',
         ]);
 
         $this->user_ci = $objs['ci'];
+
+        foreach ($objs['profilesIds'] as $id) {
+            $createdTest = Test::create([
+                'profile_id' => $id,
+                'client_id' => $this->user_ci,
+            ]);
+        }
 
         $testData = Invoice::where('user_ci', $objs['ci'])->update([
             'total_pay' => $objs['total_pay'],
         ]);
 
-        return response()->json($testData, Response::HTTP_OK);
+        return response()->json([
+            'data' => $testData,
+            'profilesSelected' => $objs['profilesIds'],
+        ], Response::HTTP_OK);
     }
 
     public function pay(Request $request) {

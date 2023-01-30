@@ -27,7 +27,7 @@ class AdminTestsController extends Controller
             'price' => ['required', 'integer'],
         ]);
 
-        $updatePrice = Catalog::where('profile_id', $newPrice['id'])->update([
+        $updatePrice = Profile::where('id', $newPrice['id'])->update([
             'price' => $newPrice['price'],
         ]);
 
